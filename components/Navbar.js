@@ -54,7 +54,6 @@ const Navbar = () => {
     {
       icon: <FaGoogle />,
       href: "mailto:shaswata.ssaha@gmail.com",
-
     },
     {
       icon: <FaYoutube />,
@@ -86,7 +85,13 @@ const Navbar = () => {
       <Flex direction="column" align="center">
         {/* Logo */}
         <ChakraLink marginTop="7vh" marginBottom="7vh" href="/">
-          <Image src="/icon.png" height={60} width={60}></Image>
+          <Image
+            src="/icon.png"
+            alt="ACNS"
+            height={60}
+            width={60}
+            priority
+          ></Image>
         </ChakraLink>
 
         {/* Bars Icon */}
