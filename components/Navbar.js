@@ -13,6 +13,7 @@ import {
   DrawerHeader,
   DrawerBody,
   VStack,
+  Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import {
@@ -25,18 +26,15 @@ import {
   FaLinkedin,
   FaGoogle,
   FaYoutube,
+  FaArrowRight,
 } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 
 const Navbar = () => {
-  // Check if the screen width is larger than 768px
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
-
-  // State for controlling the Drawer (sidebar) open/close
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
-  // Navigation links for the sidebar
   const links = [
     { text: "Home", icon: <FaHome />, href: "/" },
     { text: "About", icon: <FaInfoCircle />, href: "/about" },
@@ -45,7 +43,6 @@ const Navbar = () => {
     { text: "Contact", icon: <FaEnvelope />, href: "/contact" },
   ];
 
-  // Social media links
   const socialMediaLinks = [
     {
       icon: <FaLinkedin />,
@@ -54,7 +51,6 @@ const Navbar = () => {
     {
       icon: <FaGoogle />,
       href: "mailto:shaswata.ssaha@gmail.com",
-
     },
     {
       icon: <FaYoutube />,
@@ -62,7 +58,6 @@ const Navbar = () => {
     },
   ];
 
-  // Toggle the Drawer open/close state
   const handleDrawerToggle = () => {
     setDrawerOpen(!isDrawerOpen);
   };
@@ -73,40 +68,59 @@ const Navbar = () => {
       animate={{ x: isLargerThan768 ? 0 : "-100%" }}
       transition={{ duration: 0.6 }}
       style={{
-        position: isLargerThan768 ? "fixed" : "fixed", // Adjusted position for mobile
+        position: isLargerThan768 ? "fixed" : "fixed",
         left: 0,
         top: 0,
         height: "100vh",
         backgroundColor: "#181824",
         color: "white",
-        width: isLargerThan768 ? "6vw" : "100%", // Adjusted width for mobile
+        width: isLargerThan768 ? "6vw" : "100%",
       }}
     >
-      {/* Flex container for the main content */}
       <Flex direction="column" align="center">
-        {/* Logo */}
         <ChakraLink marginTop="7vh" marginBottom="7vh" href="/">
           <Image src="/icon.png" height={60} width={60}></Image>
         </ChakraLink>
 
-        {/* Bars Icon */}
-        <IconButton
-          icon={<FaBars />}
-          aria-label="Menu"
-          color="white"
-          border="none"
-          backgroundColor="transparent"
-          height="34vh"
-          width="100%"
-          cursor="pointer"
-          onClick={handleDrawerToggle}
-          transition=".4s ease-in-out"
-          _hover={{ backgroundColor: "transparent", color: "cyan" }}
-          marginBottom="50px"
-          fontSize="25px" // Increase size slightly
-        />
+        {isLargerThan768 ? (
+          <>
+            <IconButton
+              icon={<FaBars />}
+              aria-label="Menu"
+              color="white"
+              border="none"
+              backgroundColor="transparent"
+              height="34vh"
+              width="100%"
+              cursor="pointer"
+              onClick={handleDrawerToggle}
+              transition=".4s ease-in-out"
+              _hover={{ backgroundColor: "transparent", color: "cyan" }}
+              marginBottom="50px"
+              fontSize="25px"
+            />
+          </>
+        ) : (
+          <>
+            <Button
+              onClick={handleDrawerToggle}
+              position="fixed"
+              left="5%"
+              top="5%"
+              zIndex="1"
+              bgColor="black"
+              color="white"
+              borderRadius="5px"
+              paddingX="4"
+              display={{ base: "flex", md: "none" }}
+              alignItems="center"
+              justifyContent="space-around"
+            >
+              Open Navbar <FaArrowRight />
+            </Button>
+          </>
+        )}
 
-        {/* Social Media Icons */}
         <VStack
           backgroundColor="rgb(0,0,0,.3)"
           paddingTop="20px"
@@ -117,6 +131,7 @@ const Navbar = () => {
             <ChakraLink
               key={index}
               href={socialMediaLink.href}
+              fontFamily="Work Sans, sans-serif"
               color="white"
               fontSize="22px"
               padding="5px"
@@ -134,7 +149,6 @@ const Navbar = () => {
         </Box>
       </Flex>
 
-      {/* Sidebar Drawer */}
       <Drawer
         isOpen={isDrawerOpen}
         placement="left"
@@ -153,6 +167,7 @@ const Navbar = () => {
             cursor="pointer"
             _hover={{ color: "cyan" }}
           />
+          <DrawerHeader></DrawerHeader>
           <DrawerBody
             display="flex"
             justifyContent="center"
@@ -160,10 +175,9 @@ const Navbar = () => {
             flexDirection="column"
             padding="40px 0px"
           >
-            {/* Links in the sidebar */}
             {links.map((link, index) => (
               <ChakraLink
-                fontFamily="Work-Sans"
+                fontFamily="Work Sans, sans-serif"
                 padding="10px 0px"
                 textDecoration="none"
                 key={index}

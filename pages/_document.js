@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" scrollBehaviour="smooth">
         <Head>
           {/* Include the Work Sans font from Google Fonts with additional weights */}
           <link
