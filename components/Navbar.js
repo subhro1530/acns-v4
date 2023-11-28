@@ -49,10 +49,17 @@ const Navbar = () => {
   const socialMediaLinks = [
     {
       icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/in/your-linkedin-profile",
+      href: "https://www.linkedin.com/in/shaswata-saha-74b209251/",
     },
-    { icon: <FaGoogle />, href: "mailto:your-email@gmail.com" },
-    { icon: <FaYoutube />, href: "https://www.youtube.com/your-channel" },
+    {
+      icon: <FaGoogle />,
+      href: "mailto:shaswata.ssaha@gmail.com",
+
+    },
+    {
+      icon: <FaYoutube />,
+      href: "https://www.youtube.com/channel/UC7M2V6WGxompzcrD2vXfybw",
+    },
   ];
 
   // Toggle the Drawer open/close state
@@ -101,7 +108,7 @@ const Navbar = () => {
 
         {/* Social Media Icons */}
         <VStack
-          backgroundColor="#3a3a3a"
+          backgroundColor="rgb(0,0,0,.3)"
           paddingTop="20px"
           paddingBottom="20px"
           width="100%"
@@ -115,6 +122,7 @@ const Navbar = () => {
               padding="5px"
               marginTop="10px"
               transition=".4s ease-in-out"
+              target="blank"
               _hover={{ color: "cyan" }}
             >
               {socialMediaLink.icon}
@@ -160,7 +168,10 @@ const Navbar = () => {
                 textDecoration="none"
                 key={index}
                 href={link.href}
+                display="flex"
+                alignItems="center"
                 fontSize="20px"
+                gap="4"
                 color="white"
                 transition=".4s ease-in-out"
                 _hover={{ color: "cyan" }}
