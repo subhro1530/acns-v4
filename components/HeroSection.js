@@ -1,5 +1,6 @@
 // HeroSection.js
 import { Box, Flex, Heading, Image as ChakraImage } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -10,10 +11,14 @@ const HeroSection = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      pt={{ base: "10vh", md: "50vh" }} // Adjusted padding for smaller screens
+      pt={{ base: "10vh", md: "50vh" }}
       pb="5vw"
     >
       <Flex
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
         direction={{ base: "column", md: "row" }}
         align="center"
         justify="space-between"
@@ -25,14 +30,14 @@ const HeroSection = () => {
         <Box
           width="80%"
           maxW={{ base: "100%", md: "50%" }}
-          mb={{ base: 6, md: 0 }} // Adjust margin for smaller screens
+          mb={{ base: 6, md: 0 }}
         >
           <Heading
             as="h1"
             fontFamily="Work Sans, sans-serif"
             fontSize={{ base: "6xl", md: "8xl" }}
             fontWeight="300"
-            wordWrap="break-word" // Allow word wrapping
+            wordWrap="break-word"
           >
             Branding
           </Heading>
@@ -59,12 +64,17 @@ const HeroSection = () => {
           </Heading>
         </Box>
 
-        <Box maxW={{ base: "80%", md: "40%" }}>
+        <Box
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.5 }}
+          maxW={{ base: "80%", md: "40%" }}
+        >
           <ChakraImage
             src="https://advanceonline.com.au/wp-content/uploads/2019/10/website-designer-sydney-1024x1024.png"
             alt="Hero Image"
             borderRadius="md"
-            mt={{base:"0px",md:"-400px"}}
+            mt={{ base: "0px", md: "-400px" }}
             w="90%"
             h="auto"
           />
