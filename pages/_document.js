@@ -1,5 +1,4 @@
 // pages/_document.js
-
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -7,12 +6,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* Include the Work Sans font from Google Fonts */}
+          {/* Include the Work Sans font from Google Fonts with additional weights */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
           />
-          <link rel="shortcut icon"  href="favicon.png" type="image/x-icon" />
+          <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
         </Head>
         <body>
           <Main />
