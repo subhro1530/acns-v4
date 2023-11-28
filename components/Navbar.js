@@ -72,7 +72,7 @@ const Navbar = () => {
       animate={{ x: isLargerThan768 ? 0 : "-100%" }}
       transition={{ duration: 0.6 }}
       style={{
-        position: isLargerThan768 ? "fixed" : "static", // Adjusted position for mobile
+        position: isLargerThan768 ? "fixed" : "fixed", // Adjusted position for mobile
         left: 0,
         top: 0,
         height: "100vh",
