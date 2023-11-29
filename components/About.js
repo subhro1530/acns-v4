@@ -1,82 +1,64 @@
 // About.js
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+const languages = ["es", "bn", "it", "en"];
 
 const About = () => {
-  const languages = ["en", "hi", "es", "bn"];
-  const textToType = "Hello";
-  const initialLanguage = "en";
-
   const [displayedText, setDisplayedText] = useState("");
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
 
   useEffect(() => {
-    const fetchTranslation = async () => {
+    const fetchTranslation = async (text, targetLanguage) => {
       try {
         const response = await fetch(
-          `https://api.mymemory.translated.net/get?q=${textToType}&langpair=${initialLanguage}|${languages[currentLanguageIndex]}`
+          `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+            text
+          )}&langpair=ar|${targetLanguage}`
         );
         const data = await response.json();
-        return data?.responseData?.translatedText || textToType;
+        return data?.responseData?.translatedText || text;
       } catch (error) {
         console.error("Translation error:", error);
-        return textToType;
+        return text;
+      }
+    };
+
+    const typeText = async (text, delay, clearPrevious = false) => {
+      if (clearPrevious) {
+        setDisplayedText("");
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+
+      for (let i = 0; i < text.length; i++) {
+        setDisplayedText((prevText) => prevText + text[i]);
+        await new Promise((resolve) => setTimeout(resolve, delay));
       }
     };
 
     const updateText = async () => {
-      // Display "Hello" in English
-      let currentIndex = 0;
+      for (let i = 0; i < languages.length; i++) {
+        const currentLanguage = languages[i];
 
-      const typingInterval = setInterval(() => {
-        setDisplayedText((prevText) => prevText + textToType[currentIndex]);
-        currentIndex++;
+        // Display "Hello" in the current language with typing effect
+        // await typeText("Hello", 100, true); // Clear previous text
 
-        if (currentIndex === textToType.length) {
-          clearInterval(typingInterval);
+        // Fetch translation for the next language
+        const translatedText = await fetchTranslation("Hello", currentLanguage);
 
-          // Clear "Hello"
-          setTimeout(() => {
-            let clearedText = textToType;
-            const clearingInterval = setInterval(() => {
-              clearedText = clearedText.slice(0, -1);
-              setDisplayedText(clearedText);
+        // Display translated text in the current language with typing effect
+        await typeText(translatedText, 100, true);
 
-              if (clearedText === "") {
-                clearInterval(clearingInterval);
+        // Delay before moving to the next language
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
 
-                // Display "Hello" in another language
-                setTimeout(async () => {
-                  const translatedText = await fetchTranslation();
-                  let newIndex = 0;
-
-                  const translatingInterval = setInterval(() => {
-                    setDisplayedText(
-                      (prevText) => prevText + translatedText[newIndex]
-                    );
-                    newIndex++;
-
-                    if (newIndex === translatedText.length) {
-                      clearInterval(translatingInterval);
-
-                      // Move to the next language
-                      setCurrentLanguageIndex((prevIndex) =>
-                        prevIndex === languages.length - 1 ? 0 : prevIndex + 1
-                      );
-                    }
-                  }, 200); // Typing interval for translation
-                }, 1000); // Delay before displaying translated text
-              }
-            }, 200); // Clearing interval for "Hello"
-          }, 1000); // Delay before clearing "Hello"
-        }
-      }, 200); // Typing interval for "Hello"
+      // Reset to the first language after displaying in all languages
+      setCurrentLanguageIndex(0);
     };
 
+    // Initial trigger
     updateText();
-
-    return () => clearInterval(updateText);
-  }, [currentLanguageIndex, languages, initialLanguage, textToType]);
+  }, [currentLanguageIndex]);
 
   const textColor = useColorModeValue("gray.500", "gray.200");
 
@@ -110,8 +92,9 @@ const About = () => {
         width="80vw" // Fixed width
         mt={15}
       >
-        <Box width="50vw" color="cyan" fontSize={50}>
+        <Box width="55vw" color="cyan" fontSize={50}>
           {displayedText}
+          {displayedText.length == "" ? "" : " !"}
         </Box>
         <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
           I’m Shaswata Saha, an award-winning graphic designer, web designer,
