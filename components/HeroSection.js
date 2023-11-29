@@ -37,7 +37,7 @@ const HeroSection = () => {
             fontFamily="Work Sans, sans-serif"
             fontSize={{ base: "6xl", md: "8xl" }}
             fontWeight="300"
-            wordWrap="break-word"
+            wordwrap="break-word"
           >
             Branding
           </Heading>
@@ -47,7 +47,7 @@ const HeroSection = () => {
             fontSize={{ base: "6xl", md: "8xl" }}
             fontWeight="300"
             color="gray"
-            wordWrap="break-word"
+            wordwrap="break-word"
           >
             Web Design
           </Heading>
@@ -57,7 +57,7 @@ const HeroSection = () => {
             fontSize={{ base: "6xl", md: "8xl" }}
             fontWeight="300"
             color="cyan"
-            wordWrap="break-word"
+            wordwrap="break-word"
             width={{ base: "auto", md: "800px" }}
           >
             Graphics Design

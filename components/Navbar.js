@@ -37,10 +37,10 @@ const Navbar = () => {
 
   const links = [
     { text: "Home", icon: <FaHome />, href: "/" },
-    { text: "About", icon: <FaInfoCircle />, href: "/about" },
-    { text: "Works", icon: <FaBriefcase />, href: "/works" },
-    { text: "Services", icon: <FaCogs />, href: "/services" },
-    { text: "Contact", icon: <FaEnvelope />, href: "/contact" },
+    { text: "About", icon: <FaInfoCircle />, href: "#About" },
+    { text: "Works", icon: <FaBriefcase />, href: "#WorkSection" },
+    { text: "Services", icon: <FaCogs />, href: "#Services" },
+    { text: "Contact", icon: <FaEnvelope />, href: "#Contact" },
   ];
 
   const socialMediaLinks = [

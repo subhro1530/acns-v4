@@ -10,6 +10,7 @@ const Services = () => {
         display="flex"
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="center"
+        id="Services"
       >
         <Box borderBottom="1px solid black" width="85vw">
           <Box
