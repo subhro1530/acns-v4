@@ -71,7 +71,7 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
         padding="1.5rem"
         display="flex"
         justifyContent="center"
-        backgroundColor="black"
+        backgroundColor="cyan"
         color="white"
         flexDirection="column"
         alignItems="flex-end"
@@ -79,13 +79,12 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
         transition="0.5s ease-in-out"
         className="content"
         borderRadius="md"
-        // _hover={{ zIndex:{base:"5",md:"0"}}} 
       >
         <Heading
           as="h2"
           fontSize="40px"
           pt={5}
-          color="cyan"
+          color="#181824"
           fontWeight="500"
           lineHeight="2rem"
           letterSpacing="1px"
@@ -191,9 +190,9 @@ const WorkSection = () => {
         p={8}
         flexWrap={{ base: "wrap", md: "unset" }}
       >
-        <WorkMember name="Fem Well Care" imageUrl="/femwellcare.png" />
+        <WorkMember name="FEMWELLCARE" imageUrl="/femwellcare.png" />
 
-        <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
+        <WorkMember name="PANGEA NEWS" imageUrl="/pangeanews.png" />
       </Flex>
       <Flex
         justify="center"
@@ -201,8 +200,8 @@ const WorkSection = () => {
         p={8}
         flexWrap={{ base: "wrap", md: "unset" }}
       >
-        <WorkMember name="NovaSparkle" imageUrl="/novasparkle.png" />
-        <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
+        <WorkMember name="NOVA SPARKLE" imageUrl="/novasparkle.png" />
+        <WorkMember name="CLIMAGUARD" imageUrl="/climaguard.png" />
       </Flex>
       <Flex
         justify="center"
@@ -211,11 +210,12 @@ const WorkSection = () => {
         flexWrap={{ base: "wrap", md: "unset" }}
       >
         <WorkMember
-          name="Bal Adhikar Fun Quest"
+          name="BAL ADHIKAR FUNQUEST"
           imageUrl="/baladhikarfunquest.png"
         />
-        <WorkMember name="Crypto-Expressio" imageUrl="/crypto-expressio.png" />
+        <WorkMember name="CRYPTO EXPRESSIO" imageUrl="/crypto-expressio.png" />
       </Flex>
+      <Box align="center" fontSize={25} color="black" mt={20} mb={20}>And many more...</Box>
     </Box>
   );
 };

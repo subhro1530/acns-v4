@@ -66,7 +66,7 @@ const About = () => {
     <Box
       pl="10vw"
       bg="#111119"
-      height="100vh"
+      // height="100vh"
       color="white"
       pt={4}
       pb={4}
@@ -82,6 +82,7 @@ const About = () => {
         color="gray.200"
         fontWeight={200}
         borderBottom="1px solid gray"
+        letterSpacing={1}
       >
         <Box mb={5}>/ABOUT</Box>
       </Heading>
@@ -97,8 +98,8 @@ const About = () => {
           {displayedText.length == "" ? "" : " !"}
         </Box>
         <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
-          I’m Shaswata Saha, an award-winning graphic designer, web designer,
-          and branding specialist based in Fort Wayne, Indiana.
+          I&apos;m Shaswata Saha, a professional graphic designer, web designer,
+          and branding specialist based in Kolkata, India.
           <br />
           <br />
           With years of experience, I provide full-service design and creative

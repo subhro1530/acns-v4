@@ -1,5 +1,5 @@
 // Services.js
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 
 const Services = () => {
   return (
@@ -15,7 +15,7 @@ const Services = () => {
         <Box borderBottom="1px solid black" width="85vw">
           <Box
             pl={{ base: "4px", md: "10px" }}
-            fontSize={{ base: "2xl", md: "2xl" }}
+            fontSize={{ base: "1xl", md: "1xl" }}
             mb={{ base: 4, md: 4 }}
             fontWeight={200}
             ml={{ base: "20px", md: "0px" }}
@@ -41,24 +41,39 @@ const Services = () => {
           fontSize={{ base: "6xl", md: "8xl" }}
           mb={{ base: 4, md: 0 }}
           fontWeight={200}
+          mr={20}
           pr={{ base: "0", md: "30px" }}
         >
           Creative Offerings.
         </Heading>
 
-        <Text
-          fontSize="lg"
-          width={{ base: "", md: "60%" }}
-          pr={{ base: "0px", md: "80px" }}
-          textAlign={{ base: "center", md: "left" }}
-        >
-          We take immense pride in offering diverse services that elevate a
-          client&apos;s brand to extraordinary heights. <br />
-          <br />   With years of experience and industry recognition, our team
-          brings creativity, innovation, and strategic thinking to every
-          project. From web design to branding, we craft solutions that stand
-          out and make a lasting impact.
-        </Text>
+        <VStack align="left">
+          <Text
+            fontSize="lg"
+            width={{ base: "", md: "80%" }}
+            pr={{ base: "0px", md: "10px" }}
+            textAlign={{ base: "center", md: "left" }}
+          >
+            We take immense pride in offering diverse services that elevate a
+            client&apos;s brand to extraordinary heights. <br />
+            <br /> With years of experience and industry recognition, our team
+            brings creativity, innovation, and strategic thinking to every
+            project. From web design to branding, we craft solutions that stand
+            out and make a lasting impact.
+          </Text>
+          <Text
+            pl={{ base: "4px", md: "10px" }}
+            fontSize={{ base: "1xl", md: "1xl" }}
+            mb={{ base: 4, md: 4 }}
+            fontWeight={200}
+            ml={{ base: "20px", md: "0px" }}
+            pr={{ base: "0", md: "30px" }}
+            color="black"
+            letterSpacing={1}
+          >
+            /SERVICES
+          </Text>
+        </VStack>
       </Box>
     </>
   );
