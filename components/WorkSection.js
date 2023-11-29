@@ -1,11 +1,11 @@
 // components/WorkSection.js
 import { Box, Divider, Heading, Text, Flex, Image } from "@chakra-ui/react";
 
-const WorkMember = ({ name, imageUrl }) => (
+const WorkMember = ({ name, imageUrl, imageLink }) => (
   <Box
     position="relative"
-    width="50rem"
-    height="10rem"
+    width="30rem"
+    height="11rem"
     margin="4rem"
     _hover={{
       ".imgBox": {
@@ -33,6 +33,7 @@ const WorkMember = ({ name, imageUrl }) => (
         height="100%"
         objectFit="cover"
         resize="both"
+        borderRadius="base"
       />
     </Box>
     <Box
@@ -141,12 +142,19 @@ const WorkSection = () => {
       </Flex>
 
       <Flex justify="center" align="center" p={8}>
-        <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
-        <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
         <WorkMember
           name="Bal Adhikar Fun Quest"
           imageUrl="/baladhikarfunquest.png"
         />
+        <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
+      </Flex>
+      <Flex justify="center" align="center" p={8}>
+        <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
+        <WorkMember name="Fem Well Care" imageUrl="/femwellcare.png" />
+      </Flex>
+      <Flex justify="center" align="center" p={8}>
+        <WorkMember name="Crypto-Expressio" imageUrl="/crypto-expressio.png" />
+        <WorkMember name="NovaSparkle" imageUrl="/novasparkle.png" />
       </Flex>
     </Box>
   );
