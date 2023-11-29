@@ -141,18 +141,18 @@ const WorkSection = () => {
         </Box>
       </Flex>
 
-      <Flex justify="center" align="center" p={8}>
+      <Flex justify="center" align="center" p={8} flexWrap="wrap">
         <WorkMember
           name="Bal Adhikar Fun Quest"
           imageUrl="/baladhikarfunquest.png"
         />
         <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
       </Flex>
-      <Flex justify="center" align="center" p={8}>
+      <Flex justify="center" align="center" p={8} flexWrap="wrap">
         <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
         <WorkMember name="Fem Well Care" imageUrl="/femwellcare.png" />
       </Flex>
-      <Flex justify="center" align="center" p={8}>
+      <Flex justify="center" align="center" p={8} flexWrap="wrap">
         <WorkMember name="Crypto-Expressio" imageUrl="/crypto-expressio.png" />
         <WorkMember name="NovaSparkle" imageUrl="/novasparkle.png" />
       </Flex>
