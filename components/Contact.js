@@ -23,6 +23,9 @@ const Contact = () => {
       from_email: user_email,
       message: e.target.message.value,
     };
+    const autoReplyParams = {
+      from_email: user_email, // User's email address
+    };
 
     try {
       // Send email to your email address
@@ -37,9 +40,7 @@ const Contact = () => {
       await emailjs.send(
         "service_oh3ka5q",
         "template_p905fwh",
-        {
-          from_email: user_email,
-        },
+        autoReplyParams,
         "RNQHtfOcSdqCSJOxx"
       );
 
@@ -50,7 +51,7 @@ const Contact = () => {
         duration: 5000,
         isClosable: true,
       });
-
+      e.target.reset();
       // You can add additional logic here, such as clearing the form
     } catch (error) {
       // Show error toast
