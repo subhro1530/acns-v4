@@ -5,9 +5,14 @@ import {
   Input,
   Textarea,
   Button,
+  Text,
   useToast,
+  VStack,
+  HStack
 } from "@chakra-ui/react";
 import emailjs from "emailjs-com";
+import Image from "next/image";
+import Link from "next/link";
 
 const Contact = () => {
   const toast = useToast();
@@ -82,9 +87,9 @@ const Contact = () => {
         mt={20}
         fontSize="1xl"
         mb={4}
-        color="gray.200"
+        color="cyan"
         fontWeight={200}
-        borderBottom="1px solid gray"
+        borderBottom="1px solid cyan"
         letterSpacing={1}
       >
         <Box mb={5}>/CONTACT</Box>
@@ -107,22 +112,78 @@ const Contact = () => {
       <form onSubmit={sendEmail}>
         <Box mb={4}>
           <label htmlFor="email" color="gray.400">
-            Email (To get in touch kindly provide your email for our convenience)
+            Email (To get in touch kindly provide your email for our
+            convenience)
           </label>
           <Input type="email" name="email" required />
         </Box>
 
         <Box mb={4}>
           <label htmlFor="message" color="gray.400">
-            Message (Please include your email/contact details here to get in touch with)
+            Message (Please include your email/contact details here to get in
+            touch with)
           </label>
           <Textarea name="message" required />
         </Box>
 
-        <Button type="submit" colorScheme="cyan">
+        <Button type="submit" mb={20} colorScheme="cyan">
           Send
         </Button>
       </form>
+      <HStack
+        display={{ base: "flex", md: "flex" }}
+        flexDirection={{ base: "column", md: "row" }}
+        width="100%"
+        align="center"
+        justify="space-around"
+      >
+        <VStack align="center" ml={{ base: "0", md: "80px" }}>
+          <Heading
+            as="h1"
+            mt={20}
+            fontSize="1xl"
+            mb={4}
+            color="gray.200"
+            fontWeight={200}
+            letterSpacing={1}
+          >
+            <Box mb={2}>/EMAIL</Box>
+          </Heading>
+          <Link _hover={{color:"cyan"}} transition="0.2s ease-in-out" href="mailto:shaswata.ssaha@gmail.com">
+            shaswata.ssaha@gmail.com
+          </Link>
+        </VStack>
+        <VStack align="center" ml={{ base: "0", md: "80px" }}>
+          <Heading
+            as="h1"
+            mt={20}
+            fontSize="1xl"
+            mb={4}
+            color="gray.200"
+            fontWeight={200}
+            letterSpacing={1}
+          >
+            <Box mb={2}>/CONTACT</Box>
+          </Heading>
+          <Text>+91 9674-1775-12</Text>
+        </VStack>
+        <VStack align="center" ml={{ base: "0", md: "80px" }}>
+          <Heading
+            as="h1"
+            mt={20}
+            fontSize="1xl"
+            mb={4}
+            color="gray.200"
+            fontWeight={200}
+            letterSpacing={1}
+          >
+            <Box mb={2}>/LINKEDIN</Box>
+          </Heading>
+          <Link _hover={{color:"cyan"}} transition="0.2s ease-in-out" href="https://www.linkedin.com/in/shaswata-saha-74b209251/">
+            shaswata-saha-74b209251
+          </Link>
+        </VStack>
+      </HStack>
     </Box>
   );
 };
