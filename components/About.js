@@ -39,24 +39,16 @@ const About = () => {
       for (let i = 0; i < languages.length; i++) {
         const currentLanguage = languages[i];
 
-        // Display "Hello" in the current language with typing effect
-        // await typeText("Hello", 100, true); // Clear previous text
-
-        // Fetch translation for the next language
         const translatedText = await fetchTranslation("Hello", currentLanguage);
 
-        // Display translated text in the current language with typing effect
         await typeText(translatedText, 100, true);
-
-        // Delay before moving to the next language
+        
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
 
-      // Reset to the first language after displaying in all languages
       setCurrentLanguageIndex(0);
     };
 
-    // Initial trigger
     updateText();
   }, [currentLanguageIndex]);
 

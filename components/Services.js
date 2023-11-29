@@ -66,13 +66,32 @@ const Services = () => {
             fontSize={{ base: "1xl", md: "1xl" }}
             mb={{ base: 4, md: 4 }}
             fontWeight={200}
-            ml={{ base: "20px", md: "0px" }}
+            mt={20}
+            ml={{ base: "10px", md: "-10px" }}
             pr={{ base: "0", md: "30px" }}
             color="black"
             letterSpacing={1}
           >
             /SERVICES
           </Text>
+          <Box fontSize={25} fontWeight={200}>
+            <Text mt={5}>User Interface Design (UI)</Text>
+            <Text mt={5}>Web Design</Text>
+            <Text mt={5}>Website Development</Text>
+            <Text mt={5}>Graphic Design</Text>
+            <Text mt={5}>Illustration</Text>
+            <Text mt={5}>Poster Design</Text>
+            <Text mt={5}>Brand Promotion</Text>
+            <Text mt={5}>SEO</Text>
+            <Text mt={5}>Portfolio Website</Text>
+            <Text mt={5}>Startup Websites</Text>
+            <Text mt={5}>Social Media Posts</Text>
+            <Text mt={5}>Banner Design</Text>
+            <Text mt={5}>Advertisement Poster</Text>
+            <Text mt={5}>Business Cards</Text>
+            <Text mt={5}>Digital Cards</Text>
+            <Text mt={5} mb={10}>Digital Ceremony Cards</Text>
+          </Box>
         </VStack>
       </Box>
     </>
