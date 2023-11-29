@@ -90,6 +90,7 @@ const About = () => {
       pb={4}
       pr={4}
       borderRadius="md"
+      id="#About"
     >
       <Heading
         as="h1"
