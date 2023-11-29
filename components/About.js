@@ -123,7 +123,7 @@ const About = () => {
           Through attention to detail and a commitment to excellence, I aim to
           create designs that truly resonate. I work to create a fusion of
           captivating visuals and strategic brilliance that elevates the
-          client’s brand experience to new heights.
+          client&apos;s brand experience to new heights.
         </Text>
       </Box>
     </Box>

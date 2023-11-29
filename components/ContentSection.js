@@ -27,7 +27,7 @@ const ContentSection = () => {
       display="flex"
       alignItems="flex-end"
       justifyContent="flex-start"
-      pl={{ base: 4, md: 8 }}
+      pl={{ base: 4, md: 40 }}
       zIndex={-6}
       style={{
         scrollSnapType: "y mandatory",
@@ -38,7 +38,6 @@ const ContentSection = () => {
         direction="column"
         align="flex-start"
         mb={{ base: 8, md: 16 }}
-        ml={20}
         maxW={{ md: "600px", lg: "800px" }}
       >
         <motion.div
