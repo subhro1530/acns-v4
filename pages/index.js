@@ -11,7 +11,7 @@ import Services from "@/components/Services";
 
 const Home = () => {
   return (
-    <Box scrollBehaviour="smooth" overflowX="hidden">
+    <Box scrollbehaviour="smooth" overflowX="hidden">
       <Head>
         <title>Home | ACNS </title>
       </Head>
