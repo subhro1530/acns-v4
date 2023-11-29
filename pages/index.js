@@ -21,7 +21,7 @@ const Home = () => {
           <HeroSection />
           <ContentSection />
           <WorkSection />
-          {/* <About /> */}
+          <About />
           <Services />
         </div>
       </ChakraProvider>
