@@ -1,94 +1,137 @@
 // components/WorkSection.js
-import { Box, Divider, Heading, Text, Flex, Image } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import {
+  Box,
+  Divider,
+  Heading,
+  Text,
+  Flex,
+  Image,
+  Button,
+} from "@chakra-ui/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import NextLink from "next/link";
+import Link from "next/link";
 
-const WorkMember = ({ name, imageUrl, imageLink }) => (
-  <Box
-    position="relative"
-    width="30rem"
-    height="11rem"
-    margin="4rem"
-    _hover={{
-      ".imgBox": {
-        transform: "translate(-3.5rem, -3.5rem)",
-      },
-      ".content": {
-        transform: "translate(3.5rem, 3.5rem)",
-      },
-    }}
-  >
-    <Box
-      position="absolute"
-      top="0"
-      left="0"
-      width="100%"
-      height="100%"
-      zIndex="2"
-      transition="all 0.5s ease-in-out"
-      className="imgBox"
-    >
-      <Image
-        src={imageUrl}
-        alt={name}
-        width="100%"
-        height="100%"
-        objectFit="cover"
-        resize="both"
-        borderRadius="base"
-      />
-    </Box>
-    <Box
-      position="absolute"
-      top="0"
-      left="0"
-      width="100%"
-      height="100%"
-      padding="1.5rem"
-      display="flex"
-      justifyContent="center"
-      backgroundColor="#fff"
-      zIndex="1"
-      alignItems="flex-end"
-      textAlign="center"
-      transition="0.5s ease-in-out"
-      className="content"
-      boxShadow="3px 1px 2px 2px rgba(189,195,199,0.6)"
-      borderRadius="md"
-    >
-      <Heading
-        as="h2"
-        fontSize="lg"
-        color="#111"
-        textShadow="3px 1px 2px rgba(189,195,199,0.6)"
-        fontWeight="500"
-        lineHeight="2rem"
-        letterSpacing="1px"
-      >
-        {name}
-      </Heading>
-    </Box>
-  </Box>
-);
+const WorkMember = ({ name, imageUrl, imageLink }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
 
-const WorkSection = () => {
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, x: 0 });
+    }
+  }, [controls, inView]);
+
   return (
     <Box
+      ref={ref}
+      position="relative"
+      width="100%"
+      height="17rem"
+      margin="2rem"
+      initial={{ opacity: 0, x: -50 }}
+      animate={controls}
+      _hover={{
+        ".imgBox": {
+          transform: "translate(-3.5rem, -3.5rem)",
+        },
+        ".content": {
+          transform: "translate(3.5rem, 3.5rem)",
+        },
+      }}
+    >
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        width="100%"
+        height="100%"
+        zIndex="2"
+        transition="all 0.5s ease-in-out"
+        className="imgBox"
+      >
+        <Image
+          src={imageUrl}
+          alt={name}
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          resize="both"
+          borderRadius="base"
+        />
+      </Box>
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        width="100%"
+        height="100%"
+        padding="1.5rem"
+        display="flex"
+        justifyContent="center"
+        backgroundColor="black"
+        color="white"
+        flexDirection="column"
+        alignItems="flex-end"
+        textAlign="center"
+        transition="0.5s ease-in-out"
+        className="content"
+        borderRadius="md"
+        // _hover={{ zIndex:{base:"5",md:"0"}}} 
+      >
+        <Heading
+          as="h2"
+          fontSize="40px"
+          pt={5}
+          color="cyan"
+          fontWeight="500"
+          lineHeight="2rem"
+          letterSpacing="1px"
+          cursor="pointer"
+          mt={40}
+        >
+          {name}
+        </Heading>
+      </Box>
+    </Box>
+  );
+};
+
+const WorkSection = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <Box
+      ref={ref}
       bg="white"
       p={2}
       mt={4}
       mx="auto"
-      maxW="1100px"
-      boxShadow="lg"
+      maxW="85vw"
       borderRadius="md"
       id="WorkSection"
+      initial={{ opacity: 0 }}
+      animate={controls}
     >
       {/* Section 1: Title */}
       <Heading
         as="h2"
-        fontSize="base"
-        mb={2}
-        color="grey"
-        fontWeight="light"
-        letterSpacing="widest"
+        pl={{ base: "4px", md: "10px" }}
+        fontSize={{ base: "2xl", md: "2xl" }}
+        mb={{ base: 4, md: 4 }}
+        fontWeight={200}
+        ml={{ base: "20px", md: "0px" }}
+        pr={{ base: "0", md: "30px" }}
+        color="black"
       >
         /WORK
       </Heading>
@@ -109,7 +152,6 @@ const WorkSection = () => {
             fontFamily="Work Sans, sans-serif"
             fontSize={{ base: "6xl", md: "8xl" }}
             fontWeight="300"
-            // wordwrap="break-word"
             mb={4}
           >
             Design Is Emotion
@@ -142,6 +184,26 @@ const WorkSection = () => {
         </Box>
       </Flex>
 
+      {/* Work Members */}
+      <Flex
+        justify="center"
+        align="center"
+        p={8}
+        flexWrap={{ base: "wrap", md: "unset" }}
+      >
+        <WorkMember name="Fem Well Care" imageUrl="/femwellcare.png" />
+
+        <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
+      </Flex>
+      <Flex
+        justify="center"
+        align="center"
+        p={8}
+        flexWrap={{ base: "wrap", md: "unset" }}
+      >
+        <WorkMember name="NovaSparkle" imageUrl="/novasparkle.png" />
+        <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
+      </Flex>
       <Flex
         justify="center"
         align="center"
@@ -152,25 +214,7 @@ const WorkSection = () => {
           name="Bal Adhikar Fun Quest"
           imageUrl="/baladhikarfunquest.png"
         />
-        <WorkMember name="Pangea News" imageUrl="/pangeanews.png" />
-      </Flex>
-      <Flex
-        justify="center"
-        align="center"
-        p={8}
-        flexWrap={{ base: "wrap", md: "unset" }}
-      >
-        <WorkMember name="Clima Guard" imageUrl="/climaguard.png" />
-        <WorkMember name="Fem Well Care" imageUrl="/femwellcare.png" />
-      </Flex>
-      <Flex
-        justify="center"
-        align="center"
-        p={8}
-        flexWrap={{ base: "wrap", md: "unset" }}
-      >
         <WorkMember name="Crypto-Expressio" imageUrl="/crypto-expressio.png" />
-        <WorkMember name="NovaSparkle" imageUrl="/novasparkle.png" />
       </Flex>
     </Box>
   );

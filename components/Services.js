@@ -21,6 +21,7 @@ const Services = () => {
             ml={{ base: "20px", md: "0px" }}
             pr={{ base: "0", md: "30px" }}
             color="black"
+            letterSpacing={1}
           >
             /SERVICES
           </Box>
