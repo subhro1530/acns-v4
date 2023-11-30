@@ -28,9 +28,9 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
     <Box
       ref={ref}
       position="relative"
-      width="100%"
-      height="17rem"
-      margin="2rem"
+      width={{ base: "40rem", md: "100%" }}
+      height={{ base: "10rem", md: "17rem" }}
+      margin={{ base: "1rem", md: "2rem" }}
       initial={{ opacity: 0, x: -50 }}
       animate={controls}
       _hover={{
@@ -55,8 +55,8 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
         <Image
           src={imageUrl}
           alt={name}
-          width="100%"
-          height="100%"
+          width={{ base: "100%", md: "100%" }}
+          height={{ base: "10rem", md: "100%" }}
           objectFit="cover"
           resize="both"
           borderRadius="base"
@@ -81,8 +81,11 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
         borderRadius="md"
       >
         <Heading
+          position={{ base: "absolute" }}
+          bottom={{ base: "28px", md: "0" }}
+          left={{ base: "20px", md: "0" }}
           as="h2"
-          fontSize="40px"
+          fontSize={{ base: "20px", md: "40px" }}
           pt={5}
           color="#181824"
           fontWeight="500"
@@ -187,8 +190,9 @@ const WorkSection = () => {
       <Flex
         justify="center"
         align="center"
-        p={8}
+        p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
+        width={{ base: "80vw", md: "90vw" }}
       >
         <WorkMember name="FEMWELLCARE" imageUrl="/femwellcare.png" />
 
@@ -197,8 +201,9 @@ const WorkSection = () => {
       <Flex
         justify="center"
         align="center"
-        p={8}
+        p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
+        width={{ base: "80vw", md: "90vw" }}
       >
         <WorkMember name="NOVA SPARKLE" imageUrl="/novasparkle.png" />
         <WorkMember name="CLIMAGUARD" imageUrl="/climaguard.png" />
@@ -206,8 +211,9 @@ const WorkSection = () => {
       <Flex
         justify="center"
         align="center"
-        p={8}
+        p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
+        width={{ base: "80vw", md: "90vw" }}
       >
         <WorkMember
           name="BAL ADHIKAR FUNQUEST"
@@ -215,7 +221,9 @@ const WorkSection = () => {
         />
         <WorkMember name="CRYPTO EXPRESSIO" imageUrl="/crypto-expressio.png" />
       </Flex>
-      <Box align="center" fontSize={25} color="black" mt={20} mb={20}>And many more...</Box>
+      <Box align="center" fontSize={25} color="black" mt={20} mb={20}>
+        And many more...
+      </Box>
     </Box>
   );
 };

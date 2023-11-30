@@ -43,6 +43,8 @@ const Services = () => {
           fontWeight={200}
           mr={20}
           pr={{ base: "0", md: "30px" }}
+          width={{ base: "sm", md: "lg" }}
+          overflowWrap={{ base: "break-word", md: "unset" }}
         >
           Creative Offerings.
         </Heading>
@@ -90,7 +92,9 @@ const Services = () => {
             <Text mt={5}>Advertisement Poster</Text>
             <Text mt={5}>Business Cards</Text>
             <Text mt={5}>Digital Cards</Text>
-            <Text mt={5} mb={10}>Digital Ceremony Cards</Text>
+            <Text mt={5} mb={10}>
+              Digital Ceremony Cards
+            </Text>
           </Box>
         </VStack>
       </Box>
