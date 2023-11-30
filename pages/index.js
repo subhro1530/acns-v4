@@ -9,6 +9,8 @@ import About from "@/components/About";
 import Head from "next/head";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
+import ContentSection2 from "@/components/ContentSection2";
+import ContentSection3 from "@/components/ContentSection3";
 
 const Home = () => {
   return (
@@ -21,8 +23,10 @@ const Home = () => {
           <Navbar />
           <HeroSection />
           <ContentSection />
-          <WorkSection />
+          <ContentSection2 />
+          <ContentSection3 />
           <About />
+          <WorkSection />
           <Services />
           <Contact />
         </div>

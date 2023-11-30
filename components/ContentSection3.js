@@ -5,14 +5,14 @@ import { FaArrowRight } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 
-const ContentSection = () => {
+const ContentSection3 = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
   return (
     <Box
       ref={ref}
-      bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif') center/cover"
+      bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/originals/90/c2/f7/90c2f783397ff969a6d22cc0587f7354.gif') center/cover"
       color="white"
       h="100vh"
       display="flex"
@@ -41,7 +41,7 @@ const ContentSection = () => {
             fontWeight="200"
             mb={4}
           >
-            Branding makes a Brand
+            Every brand needs a Logo and Graphics
           </Heading>
         </motion.div>
         <motion.div
@@ -50,9 +50,7 @@ const ContentSection = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Text fontSize="xl" fontWeight={200} color="cyan" mb={4}>
-            We provide and cover you with all the branding stuff, including
-            interactive and dynamic websites and logos, since we care about your
-            choice.
+            Don&apos;t worry! We offer you with all the graphics of your company with our rich expertise.
           </Text>
         </motion.div>
         <motion.div
@@ -84,4 +82,4 @@ const ContentSection = () => {
   );
 };
 
-export default ContentSection;
+export default ContentSection3;
