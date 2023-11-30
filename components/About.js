@@ -1,5 +1,11 @@
 // About.js
-import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  VStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 const languages = ["es", "bn", "it", "en"];
 
@@ -42,7 +48,7 @@ const About = () => {
         const translatedText = await fetchTranslation("Hello", currentLanguage);
 
         await typeText(translatedText, 100, true);
-        
+
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
 
@@ -89,19 +95,21 @@ const About = () => {
           {displayedText}
           {displayedText.length == "" ? "" : " !"}
         </Box>
-        <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
-          I&apos;m Shaswata Saha, a professional graphic designer, web designer,
-          and branding specialist based in Kolkata, India.
-          <br />
-          <br />
-          With years of experience, I provide full-service design and creative
-          solutions that strive for exceptional results. My work blends artistry
-          and innovation, going beyond trends to forge genuine connections.
-          Through attention to detail and a commitment to excellence, I aim to
-          create designs that truly resonate. I work to create a fusion of
-          captivating visuals and strategic brilliance that elevates the
-          client&apos;s brand experience to new heights.
-        </Text>
+        <VStack>
+          <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
+            I&apos;m Shaswata Saha, a professional graphic designer, web
+            designer, and branding specialist based in Kolkata, India.
+            <br />
+            <br />
+            With years of experience, I provide full-service design and creative
+            solutions that strive for exceptional results. My work blends
+            artistry and innovation, going beyond trends to forge genuine
+            connections. Through attention to detail and a commitment to
+            excellence, I aim to create designs that truly resonate. I work to
+            create a fusion of captivating visuals and strategic brilliance that
+            elevates the client&apos;s brand experience to new heights.
+          </Text>
+        </VStack>
       </Box>
     </Box>
   );

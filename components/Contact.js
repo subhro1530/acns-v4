@@ -72,7 +72,7 @@ const Contact = () => {
 
   return (
     <Box
-      bg="black"
+      bg="#181824"
       color="white"
       p={8}
       mx="auto"
@@ -149,7 +149,11 @@ const Contact = () => {
           >
             <Box mb={2}>/EMAIL</Box>
           </Heading>
-          <Link _hover={{color:"cyan"}} transition="0.2s ease-in-out" href="mailto:shaswata.ssaha@gmail.com">
+          <Link
+            _hover={{ color: "cyan" }}
+            transition="0.2s ease-in-out"
+            href="mailto:shaswata.ssaha@gmail.com"
+          >
             shaswata.ssaha@gmail.com
           </Link>
         </VStack>
@@ -179,7 +183,11 @@ const Contact = () => {
           >
             <Box mb={2}>/LINKEDIN</Box>
           </Heading>
-          <Link _hover={{color:"cyan"}} transition="0.2s ease-in-out" href="https://www.linkedin.com/in/shaswata-saha-74b209251/">
+          <Link
+            _hover={{ color: "cyan" }}
+            transition="0.2s ease-in-out"
+            href="https://www.linkedin.com/in/shaswata-saha-74b209251/"
+          >
             shaswata-saha-74b209251
           </Link>
         </VStack>
