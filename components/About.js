@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
 const languages = ["es", "bn", "it", "en"];
+import Image from "next/image";
 
 const About = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -89,7 +90,6 @@ const About = () => {
     <Box
       pl="10vw"
       bg="#111119"
-      // height="100vh"
       color="white"
       pt={4}
       pb={4}
@@ -128,19 +128,64 @@ const About = () => {
           {displayedText}
           {displayedText.length == "" ? "" : " !"}
         </Box>
-        <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
-          I&apos;m Shaswata Saha, a professional graphic designer, web designer,
-          and branding specialist based in Kolkata, India.
-          <br />
-          <br />
-          With years of experience, I provide full-service design and creative
-          solutions that strive for exceptional results. My work blends artistry
-          and innovation, going beyond trends to forge genuine connections.
-          Through attention to detail and a commitment to excellence, I aim to
-          create designs that truly resonate. I work to create a fusion of
-          captivating visuals and strategic brilliance that elevates the
-          client&apos;s brand experience to new heights.
-        </Text>
+        <VStack align="left" mb={20}>
+          <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
+            I&apos;m Shaswata Saha, a professional graphic designer, web
+            designer, and branding specialist based in Kolkata, India.
+            <br />
+            <br />
+            With years of experience, I provide full-service design and creative
+            solutions that strive for exceptional results. My work blends
+            artistry and innovation, going beyond trends to forge genuine
+            connections. Through attention to detail and a commitment to
+            excellence, I aim to create designs that truly resonate. I work to
+            create a fusion of captivating visuals and strategic brilliance that
+            elevates the client&apos;s brand experience to new heights.
+          </Text>
+          <Text
+            pl={{ base: "4px", md: "10px" }}
+            fontSize={{ base: "16px", md: "16px" }}
+            mb={{ base: 4, md: 4 }}
+            fontWeight={200}
+            mt={20}
+            ml={{ base: "10px", md: "50px" }}
+            pr={{ base: "0", md: "30px" }}
+            letterSpacing={1}
+            color="cyan"
+          >
+            /AGENCIES WE&apos;VE WORKED FOR
+          </Text>
+          <Box
+            fontSize={25}
+            color="gray.400"
+            ml={{ base: "10px", md: "60px" }}
+            fontWeight={200}
+          >
+            <Text mt={5}>User Interface Design (UI)</Text>
+            <Text mt={5}>Web Design</Text>
+            <Text mt={5}>Website Development</Text>
+            <Text mt={5}>Graphic Design</Text>
+          </Box>
+          <Text
+            pl={{ base: "4px", md: "10px" }}
+            fontSize={{ base: "16px", md: "16px" }}
+            mb={{ base: 4, md: 4 }}
+            fontWeight={200}
+            mt={20}
+            ml={{ base: "10px", md: "50px" }}
+            pr={{ base: "0", md: "30px" }}
+            letterSpacing={1}
+            color="cyan"
+          >
+            /BRANDS WE&apos;VE WORKED WITH
+          </Text>
+          <Image
+            src="/logo_all.png"
+            height={1500}
+            alt="all logos"
+            width={500}
+          ></Image>
+        </VStack>
       </Box>
     </Box>
   );
