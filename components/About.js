@@ -1,11 +1,34 @@
 // About.js
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 const languages = ["es", "bn", "it", "en"];
 
 const About = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    setDisplayedText("");
+    const handleScroll = () => {
+      if (boxRef.current) {
+        const { top } = boxRef.current.getBoundingClientRect();
+        setIsVisible(top < window.innerHeight);
+        if (isVisible && !isDone) {
+          // Set isDone to true when the component is visible
+          setIsDone(true);
+        }
+      }
+    };
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+    // Call handleScroll once to check the initial position
+    handleScroll();
+    // Remove the event listener when the component is unmounted
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const fetchTranslation = async (text, targetLanguage) => {
@@ -42,15 +65,17 @@ const About = () => {
         const translatedText = await fetchTranslation("Hello", currentLanguage);
 
         await typeText(translatedText, 100, true);
-        
+
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
 
       setCurrentLanguageIndex(0);
     };
 
-    updateText();
-  }, [currentLanguageIndex]);
+    if (isVisible) {
+      updateText();
+    }
+  }, [currentLanguageIndex, isVisible]);
 
   const textColor = useColorModeValue("gray.500", "gray.200");
 
@@ -84,12 +109,26 @@ const About = () => {
         color={textColor}
         width="80vw" // Fixed width
         mt={15}
+        ref={boxRef}
+        flexWrap={{ base: "wrap", md: "unset" }}
+        justifyContent={{ base: "center" }}
       >
-        <Box width="55vw" color="cyan" fontSize={50}>
+        <Box
+          width={{ base: "15rem", md: "55vw" }}
+          height={{ base: "5rem" }}
+          color="cyan"
+          fontSize={50}
+        >
           {displayedText}
           {displayedText.length == "" ? "" : " !"}
         </Box>
-        <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
+        <Text
+          ml={4}
+          pl={{ base: "sm", md: "lg" }}
+          fontSize={{ base: "sm", md: "lg" }}
+          color="white"
+          fontWeight={200}
+        >
           I&apos;m Shaswata Saha, a professional graphic designer, web designer,
           and branding specialist based in Kolkata, India.
           <br />
