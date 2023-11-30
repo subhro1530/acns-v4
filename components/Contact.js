@@ -80,7 +80,7 @@ const Contact = () => {
       pl={{ base: "20px", md: "150px" }}
       maxW="100vw"
       borderRadius="md"
-      id="ContactPage"
+      id="Contact"
     >
       <Heading
         as="h1"

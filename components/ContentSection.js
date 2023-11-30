@@ -2,25 +2,16 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import { useRouter } from "next/router";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 
 const ContentSection = () => {
-  const router = useRouter();
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
-
-  const handleButtonClick = () => {
-    // Navigate to the services page
-    router.push("/services");
-  };
-
   return (
     <Box
       ref={ref}
-      position="relative"
       bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://wallpaperaccess.com/full/283173.jpg') center/cover"
       color="white"
       h="100vh"
@@ -28,7 +19,6 @@ const ContentSection = () => {
       alignItems="flex-end"
       justifyContent="flex-start"
       pl={{ base: 4, md: 40 }}
-      zIndex={-6}
       style={{
         scrollSnapType: "y mandatory",
         overflowY: "auto",
@@ -71,7 +61,7 @@ const ContentSection = () => {
           transition={{ duration: 1, delay: 1 }}
         >
           <Link
-            href="/services"
+            href="#Contact"
             style={{
               display: "flex",
               alignItems: "center",

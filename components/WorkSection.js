@@ -82,8 +82,8 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
       >
         <Heading
           position={{ base: "absolute" }}
-          bottom={{ base: "28px", md: "0" }}
-          left={{ base: "20px", md: "0" }}
+          bottom={{ base: "28px", md: "10px" }}
+          left={{ base: "20px", md: "5px" }}
           as="h2"
           fontSize={{ base: "20px", md: "40px" }}
           pt={5}
@@ -93,8 +93,11 @@ const WorkMember = ({ name, imageUrl, imageLink }) => {
           letterSpacing="1px"
           cursor="pointer"
           mt={40}
+          _hover={{ color: "white", textShadow: "3px 1px 2px black" }}
         >
-          {name}
+          <Link href={imageLink} target="_blank">
+            {name}
+          </Link>
         </Heading>
       </Box>
     </Box>
@@ -124,26 +127,19 @@ const WorkSection = () => {
       initial={{ opacity: 0 }}
       animate={controls}
     >
-      {/* Section 1: Title */}
-      <Heading
-        as="h2"
-        pl={{ base: "4px", md: "10px" }}
-        fontSize={{ base: "2xl", md: "2xl" }}
-        mb={{ base: 4, md: 4 }}
-        fontWeight={200}
-        ml={{ base: "20px", md: "0px" }}
-        pr={{ base: "0", md: "30px" }}
-        color="black"
-      >
-        /WORK
-      </Heading>
-      <Divider
-        mb={4}
-        color="black"
-        opacity="0.6"
-        borderColor="unset"
-        marginTop="2rem"
-      />
+      <Box borderBottom="1px solid black" width="85vw" margin={4}>
+        <Box
+          as="h1"
+          mt={20}
+          fontSize="1xl"
+          mb={4}
+          color="black.200"
+          fontWeight={200}
+          letterSpacing={1}
+        >
+          /WORK
+        </Box>
+      </Box>
 
       {/* Section 2: Content */}
       <Flex direction={{ base: "column", md: "row" }} mb={8}>
@@ -194,9 +190,17 @@ const WorkSection = () => {
         flexWrap={{ base: "wrap", md: "unset" }}
         width={{ base: "80vw", md: "90vw" }}
       >
-        <WorkMember name="FEMWELLCARE" imageUrl="/femwellcare.png" />
+        <WorkMember
+          name="FEMWELLCARE"
+          imageUrl="/femwellcare.png"
+          imageLink="https://femwellcare.vercel.app/"
+        />
 
-        <WorkMember name="PANGEA NEWS" imageUrl="/pangeanews.png" />
+        <WorkMember
+          name="PANGEA NEWS"
+          imageUrl="/pangeanews.png"
+          imageLink="https://pangeanews.vercel.app/"
+        />
       </Flex>
       <Flex
         justify="center"
@@ -205,8 +209,16 @@ const WorkSection = () => {
         flexWrap={{ base: "wrap", md: "unset" }}
         width={{ base: "80vw", md: "90vw" }}
       >
-        <WorkMember name="NOVA SPARKLE" imageUrl="/novasparkle.png" />
-        <WorkMember name="CLIMAGUARD" imageUrl="/climaguard.png" />
+        <WorkMember
+          name="NOVA SPARKLE"
+          imageUrl="/novasparkle.png"
+          imageLink="https://nova-sparkle-music.vercel.app/"
+        />
+        <WorkMember
+          name="CLIMAGUARD"
+          imageUrl="/climaguard.png"
+          imageLink="https://climaguard.vercel.app/"
+        />
       </Flex>
       <Flex
         justify="center"
@@ -218,8 +230,13 @@ const WorkSection = () => {
         <WorkMember
           name="BAL ADHIKAR FUNQUEST"
           imageUrl="/baladhikarfunquest.png"
+          imageLink="https://bal-adhikar-funquest.vercel.app/"
         />
-        <WorkMember name="CRYPTO EXPRESSIO" imageUrl="/crypto-expressio.png" />
+        <WorkMember
+          name="CRYPTO EXPRESSIO"
+          imageUrl="/crypto-expressio.png"
+          imageLink="https://crypto-expressio.web.app/"
+        />
       </Flex>
       <Box align="center" fontSize={25} color="black" mt={20} mb={20}>
         And many more...
