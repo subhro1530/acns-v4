@@ -11,16 +11,19 @@ const Services = () => {
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="center"
         id="Services"
+        pl="10vw"
+        pb={4}
+        pr={4}
+        borderRadius="md"
       >
         <Box borderBottom="1px solid black" width="85vw">
           <Box
-            pl={{ base: "4px", md: "10px" }}
-            fontSize={{ base: "1xl", md: "1xl" }}
-            mb={{ base: 4, md: 4 }}
+            as="h1"
+            mt={20}
+            fontSize="1xl"
+            mb={4}
+            color="black.200"
             fontWeight={200}
-            ml={{ base: "20px", md: "0px" }}
-            pr={{ base: "0", md: "30px" }}
-            color="black"
             letterSpacing={1}
           >
             /SERVICES
@@ -54,7 +57,7 @@ const Services = () => {
             fontSize="lg"
             width={{ base: "", md: "80%" }}
             pr={{ base: "0px", md: "10px" }}
-            textAlign={{ base: "center", md: "left" }}
+            textAlign={{ base: "left", md: "left" }}
           >
             We take immense pride in offering diverse services that elevate a
             client&apos;s brand to extraordinary heights. <br />
