@@ -12,7 +12,7 @@ import Contact from "@/components/Contact";
 import ContentSection2 from "@/components/ContentSection2";
 import ContentSection3 from "@/components/ContentSection3";
 import FAQ from "@/components/FAQ";
-import Payment from "@/components/Payment";
+import QRPay from "@/components/QRPay";
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
           <WorkSection />
           <Services />
           <FAQ />
-          <Payment />
+          <QRPay />
           <Contact />
         </div>
       </ChakraProvider>

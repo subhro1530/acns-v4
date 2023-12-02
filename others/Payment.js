@@ -41,10 +41,10 @@ const PaymentForm = () => {
       const cardElement = elements.getElement(CardElement);
 
       const result = await confirmCardPayment(clientSecret, {
-  payment_method: {
-    card: stripe.elements.getElement(CardElement),
-  },
-});
+        payment_method: {
+          card: stripe.elements.getElement(CardElement),
+        },
+      });
 
       if (result.error) {
         console.error(result.error.message);
@@ -58,9 +58,6 @@ const PaymentForm = () => {
       // Handle other errors
     }
   };
-
-
-
 
   return (
     <Box
