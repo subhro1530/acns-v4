@@ -12,8 +12,8 @@ class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
           {/* Add the Stripe.js script */}
-          <script src="https://js.stripe.com/v3/"></script>
-          <script src="/stripe-init.js" />
+          {/* <script src="https://js.stripe.com/v3/"></script> */}
+          {/* <script src="/stripe-init.js" /> */}
         </Head>
         <body>
           <Main />
