@@ -1,10 +1,10 @@
 // pages/index.js
 
-import Pricing from "@/components/Pricing";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+const Pricing = dynamic(() => import("@/components/Pricing"), { ssr: false });
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
   ssr: false,
 });
