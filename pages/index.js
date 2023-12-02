@@ -5,18 +5,30 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
-const HeroSection = dynamic(() => import("@/components/HeroSection"));
-const WorkSection = dynamic(() => import("@/components/WorkSection"));
-const ContentSection = dynamic(() => import("@/components/ContentSection"));
-const About = dynamic(() => import("@/components/About"));
+const HeroSection = dynamic(() => import("@/components/HeroSection"), {
+  ssr: false,
+});
+const WorkSection = dynamic(() => import("@/components/WorkSection"), {
+  ssr: false,
+});
+const ContentSection = dynamic(() => import("@/components/ContentSection"), {
+  ssr: false,
+});
+const About = dynamic(() => import("@/components/About"), { ssr: false });
 const Head = dynamic(() => import("next/head"));
-const Services = dynamic(() => import("@/components/Services"));
-const Contact = dynamic(() => import("@/components/Contact"));
-const ContentSection2 = dynamic(() => import("@/components/ContentSection2"));
-const ContentSection3 = dynamic(() => import("@/components/ContentSection3"));
-const FAQ = dynamic(() => import("@/components/FAQ"));
-const QRPay = dynamic(() => import("@/components/QRPay"));
-const NavbarMob = dynamic(() => import("@/components/NavbarMob"));
+const Services = dynamic(() => import("@/components/Services"), { ssr: false });
+const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
+const ContentSection2 = dynamic(() => import("@/components/ContentSection2"), {
+  ssr: false,
+});
+const ContentSection3 = dynamic(() => import("@/components/ContentSection3"), {
+  ssr: false,
+});
+const FAQ = dynamic(() => import("@/components/FAQ"), { ssr: false });
+const QRPay = dynamic(() => import("@/components/QRPay"), { ssr: false });
+const NavbarMob = dynamic(() => import("@/components/NavbarMob"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
