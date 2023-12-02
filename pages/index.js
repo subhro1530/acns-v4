@@ -1,5 +1,6 @@
 // pages/index.js
 
+import Pricing from "@/components/Pricing";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
@@ -16,8 +17,6 @@ const ContentSection3 = dynamic(() => import("@/components/ContentSection3"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
 const QRPay = dynamic(() => import("@/components/QRPay"));
 const NavbarMob = dynamic(() => import("@/components/NavbarMob"));
-
-
 
 const Home = () => {
   return (
@@ -36,6 +35,7 @@ const Home = () => {
           <About />
           <WorkSection />
           <Services />
+          <Pricing />
           <FAQ />
           <QRPay />
           <Contact />
