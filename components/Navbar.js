@@ -27,6 +27,7 @@ import {
   FaGoogle,
   FaYoutube,
   FaArrowRight,
+  FaWhatsapp,
 } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
@@ -42,8 +43,12 @@ const Navbar = () => {
     { text: "Services", icon: <FaCogs />, href: "#Services" },
     { text: "Contact", icon: <FaEnvelope />, href: "#Contact" },
   ];
-
+  
   const socialMediaLinks = [
+    {
+      icon: <FaWhatsapp />,
+      href: "https://wa.me/9674177512",
+    },
     {
       icon: <FaLinkedin />,
       href: "https://www.linkedin.com/in/shaswata-saha-74b209251/",
@@ -96,7 +101,7 @@ const Navbar = () => {
               color="white"
               border="none"
               backgroundColor="transparent"
-              height="34vh"
+              height="26vh"
               width="100%"
               cursor="pointer"
               onClick={handleDrawerToggle}
@@ -129,8 +134,8 @@ const Navbar = () => {
 
         <VStack
           backgroundColor="rgb(0,0,0,.3)"
-          paddingTop="20px"
-          paddingBottom="20px"
+          paddingTop="30px"
+          paddingBottom="30px"
           width="100%"
         >
           {socialMediaLinks.map((socialMediaLink, index) => (

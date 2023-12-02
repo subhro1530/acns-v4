@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import ContentSection2 from "@/components/ContentSection2";
 import ContentSection3 from "@/components/ContentSection3";
 import FAQ from "@/components/FAQ";
+import Payment from "@/components/Payment";
 
 const Home = () => {
   return (
@@ -29,7 +30,8 @@ const Home = () => {
           <About />
           <WorkSection />
           <Services />
-          <FAQ/>
+          <FAQ />
+          <Payment />
           <Contact />
         </div>
       </ChakraProvider>
