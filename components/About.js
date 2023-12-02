@@ -15,7 +15,8 @@ const About = () => {
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isDone, setIsDone] = useState(false);
-  const boxRef = useRef(null);  
+  const [isLast, setIsLast] = useState(false);
+  const boxRef = useRef(null);
 
   useEffect(() => {
     setDisplayedText("");
@@ -35,7 +36,7 @@ const About = () => {
     handleScroll();
     // Remove the event listener when the component is unmounted
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isDone, isVisible]);
 
   useEffect(() => {
     const fetchTranslation = async (text, targetLanguage) => {
@@ -74,15 +75,18 @@ const About = () => {
         await typeText(translatedText, 100, true);
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
+        if (i == languages.length - 1) {
+          setIsLast(true);
+        }
       }
 
       setCurrentLanguageIndex(0);
     };
 
-    if (isVisible) {
+    if (isVisible && !isDone) {
       updateText();
     }
-  }, [currentLanguageIndex, isVisible]);
+  }, [currentLanguageIndex, isVisible, isDone]);
 
   const textColor = useColorModeValue("gray.500", "gray.200");
 
@@ -95,7 +99,7 @@ const About = () => {
       pb={4}
       pr={4}
       borderRadius="md"
-      id="#About"
+      id="About"
     >
       <Heading
         as="h1"
@@ -125,8 +129,8 @@ const About = () => {
           color="cyan"
           fontSize={50}
         >
-          {displayedText}
-          {displayedText.length == "" ? "" : " !"}
+          {displayedText.length === 0 && isLast ? "Hello !" : displayedText}
+          {displayedText.length === 0 ? "" : " !"}
         </Box>
         <VStack align="left" mb={20}>
           <Text ml={4} pl={10} fontSize={16} color="white" fontWeight={200}>
