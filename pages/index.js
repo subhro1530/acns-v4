@@ -28,7 +28,7 @@ const Home = () => {
       <ChakraProvider>
         <div style={{ fontFamily: "Work Sans, sans-serif" }}>
           <Navbar />
-          <NavbarMob />
+          {/* <NavbarMob /> */}
           <HeroSection />
           <ContentSection />
           <ContentSection2 />
