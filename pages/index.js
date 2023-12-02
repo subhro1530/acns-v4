@@ -48,8 +48,8 @@ const Home = () => {
           <WorkSection />
           <Services />
           <Pricing />
-          <FAQ />
           <QRPay />
+          <FAQ />
           <Contact />
         </div>
       </ChakraProvider>
