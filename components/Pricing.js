@@ -1,4 +1,3 @@
-// components/Pricing.js
 import {
   Box,
   Text,
@@ -9,7 +8,10 @@ import {
   Flex,
   Divider,
   Heading,
+  Spinner,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 
 const PricingSection = ({
   dividerColor,
@@ -19,6 +21,19 @@ const PricingSection = ({
   pricetype,
   includes,
 }) => {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleBuyNow = () => {
+    setIsLoading(true);
+    // Simulate an API call or any asynchronous operation
+    setTimeout(() => {
+      setIsLoading(false);
+      // Navigate to the QRPay page
+      router.push("/qrpay");
+    }, 1500);
+  };
+
   return (
     <Box
       p={6}
@@ -40,31 +55,31 @@ const PricingSection = ({
       </Text>
       <Text fontSize="4xl" fontWeight="bolder" mb={2} height="100px">
         {`${price}`}
-        <Text
-          fontSize="md"
-          opacity="0.6"
-          fontWeight="none"
-          height="30%"
-        >{`${pricetag}`}</Text>
-        <Text
-          fontSize="sm"
-          fontWeight="none"
-          height="30%"
-        >{`${pricetype}`}</Text>
+        <Text fontSize="md" opacity="0.6" fontWeight="none" height="30%">
+          {`${pricetag}`}
+        </Text>
+        <Text fontSize="sm" fontWeight="none" height="30%">
+          {`${pricetype}`}
+        </Text>
       </Text>
-      <Button
-        colorScheme="cyan"
-        color="white"
-        mb={4}
-        borderRadius="0"
-        width="100%"
-        _hover={{
-          backgroundColor: "#00ffff",
-          color: "black",
-        }}
-      >
-        Buy Now
-      </Button>
+      {isLoading ? (
+        <Spinner color="cyan" />
+      ) : (
+        <Button
+          colorScheme="cyan"
+          color="white"
+          mb={4}
+          borderRadius="0"
+          width="100%"
+          onClick={handleBuyNow}
+          _hover={{
+            backgroundColor: "#00ffff",
+            color: "black",
+          }}
+        >
+          Buy Now
+        </Button>
+      )}
       <Text fontSize="md" fontWeight="bold" height="3rem">
         Includes:
       </Text>
@@ -85,58 +100,61 @@ const Pricing = () => {
   const sections = [
     {
       dividerColor: "lightblue",
-      name: "Single Event",
-      price: "$100",
-      pricetag: "per event",
+      name: "Basic Web Presence",
+      price: "₹3999",
+      pricetag: "one-time",
       pricetype: "",
       includes: [
-        "Customizable event landing page",
-        "Online registration and ticketing",
-        "Real-time analytics and reporting",
-        "Mobile responsiveness",
-        "Social media integration",
+        "Responsive and Customizable Website",
+        "Basic Logo Design",
+        "Up to 5 Pages",
+        "Delivery in 14 days",
       ],
     },
     {
       dividerColor: "cyan",
-      name: "Standard",
-      price: "$0.50",
-      pricetag: "per user per month",
-      pricetype: "Billed Annually",
+      name: "Standard Web Package",
+      price: "₹5899",
+      pricetag: "one-time",
+      pricetype: "",
       includes: [
-        "Unlimited events per month",
-        "Advanced customization options",
-        "Attendee engagement tools",
-        "Email marketing integration",
-        "Access to basic customer support",
+        "Full-Featured Website",
+        "Creative Logo and Branding",
+        "Up to 10 Pages",
+        "Delivery in 10 days",
+        "Exclusive Coupon for Future Services",
       ],
     },
     {
       dividerColor: "darkcyan",
-      name: "Standard+",
-      price: "$1.00",
-      pricetag: "per user per month",
-      pricetype: "Billed Annually",
+      name: "Premium Web and Graphics",
+      price: "₹7599",
+      pricetag: "one-time",
+      pricetype: "",
       includes: [
-        "All Standard plan features",
-        "Priority customer support",
-        "Multi-event management",
-        "Custom branding and themes",
-        "Discounts and promotional tools",
+        "Premium Website with Advanced Features",
+        "Unique Logo Design and Branding",
+        "Up to 15 Pages",
+        "Delivery in 7 days",
+        "Exclusive Coupon for Future Services",
+        "Custom Coupon Card for Next Purchase",
       ],
     },
     {
       dividerColor: "blue",
-      name: "Premium",
-      price: "Enterprise",
-      pricetag: "",
+      name: "Enterprise Package",
+      price: "₹9499",
+      pricetag: "one-time",
       pricetype: "",
       includes: [
-        "All Standard+ plan features",
-        "Dedicated account manager",
-        "VIP customer support",
-        "Advanced analytics and insights",
-        "API access for third-party integrations",
+        "Comprehensive Web Development",
+        "Highly Creative Logo and Branding",
+        "Unlimited Pages",
+        "Delivery in 5 days",
+        "VIP Customer Support",
+        "Advanced Analytics and Insights",
+        "API Access for Third-Party Integrations",
+        "Custom Coupon Card for Next Purchase",
       ],
     },
   ];
@@ -147,21 +165,13 @@ const Pricing = () => {
         <Heading
           as="h1"
           fontFamily="Work Sans, sans-serif"
-          fontSize={{ base: "xl", md: "4xl" }}
+          fontSize={{ base: "2xl", md: "6xl" }}
           fontWeight="300"
           wordwrap="break-word"
         >
-          Flexible plans for every
+          Flexible Plans for You!
         </Heading>
-        <Heading
-          as="h1"
-          fontFamily="Work Sans, sans-serif"
-          fontSize={{ base: "xl", md: "4xl" }}
-          fontWeight="300"
-          wordwrap="break-word"
-        >
-          stage of your web journey
-        </Heading>
+        <Box>(Be in contact with us for present deals)</Box>
       </Box>
       <Flex marginLeft={{ md: "4rem" }} wrap="wrap" justify="center" gap="1rem">
         {sections.map((section, index) => (
