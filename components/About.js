@@ -15,7 +15,6 @@ const About = () => {
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isDone, setIsDone] = useState(false);
-  const [isLast, setIsLast] = useState(false);
   const boxRef = useRef(null);
 
   useEffect(() => {
