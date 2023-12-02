@@ -99,7 +99,6 @@ const QRPay = () => {
           onChange={(e) => setPhone(e.target.value)}
         />
         <Button
-          mt={10}
           mb={20}
           colorScheme="blue"
           size="lg"
