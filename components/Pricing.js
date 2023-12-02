@@ -173,7 +173,7 @@ const Pricing = () => {
         </Heading>
         <Box>(Be in contact with us for present deals)</Box>
       </Box>
-      <Flex marginLeft={{ md: "4rem" }} wrap="wrap" justify="center" gap="1rem">
+      <Flex marginLeft={{ md: "5rem" }} wrap="wrap" justify="center" gap="1rem">
         {sections.map((section, index) => (
           <PricingSection key={index} {...section} />
         ))}
