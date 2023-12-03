@@ -57,11 +57,11 @@ const QRPay = () => {
         Help Us Grow!
       </Text>
       <Text
-        fontSize="20px"
+        fontSize={{base:"16px",md:"20px"}}
         textAlign="center"
         mb={10}
         fontWeight="200"
-        ml={20}
+        ml={{base:"0px",md:"20px"}}
         color="white"
       >
         This will give you opportunities to be a part of our huge community and

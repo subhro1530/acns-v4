@@ -14,7 +14,7 @@ const ContentSection2 = () => {
       ref={ref}
       bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://c4.wallpaperflare.com/wallpaper/944/995/821/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg') center/cover"
       color="white"
-      h="100vh"
+      h={{ base: "70vh", md: "100vh" }}
       display="flex"
       alignItems="flex-end"
       justifyContent="flex-start"
@@ -50,7 +50,9 @@ const ContentSection2 = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Text fontSize="xl" fontWeight={200} color="cyan" mb={4}>
-            We provide with a wide range of multi-purpose websites for the begginers as well as the advanced companies. And remember it&apos;s custom made only for you.
+            We provide with a wide range of multi-purpose websites for the
+            begginers as well as the advanced companies. And remember it&apos;s
+            custom made only for you.
           </Text>
         </motion.div>
         <motion.div

@@ -105,10 +105,10 @@ const FAQ = () => {
             onClick={() => handleToggle(index)}
             p={4}
           >
-            <Text fontSize="lg">{item.question}</Text>
+            <Text fontSize={{base:"16px",md:"25px"}}>{item.question}</Text>
             <IconButton
               icon={isOpen[index] ? <FaMinus /> : <FaPlus />}
-              fontSize="lg"
+              fontSize={{base:"20px",md:"25px"}}
             />
           </Flex>
           <Collapse in={isOpen[index]} animateOpacity>

@@ -1,4 +1,3 @@
-// HeroSection.js
 import { Box, Flex, Heading, Image as ChakraImage } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
@@ -27,7 +26,10 @@ const HeroSection = () => {
         mx="auto"
         pl={{ base: 0, md: 4 }}
       >
-        <Box
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           width="80%"
           maxW={{ base: "100%", md: "50%" }}
           mb={{ base: 6, md: 0 }}
@@ -62,12 +64,13 @@ const HeroSection = () => {
           >
             Graphics Design
           </Heading>
-        </Box>
+        </motion.div>
 
-        <Box
-          as={motion.div}
+        <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           maxW={{ base: "80%", md: "40%" }}
         >
           <ChakraImage
@@ -78,7 +81,7 @@ const HeroSection = () => {
             w="90%"
             h="auto"
           />
-        </Box>
+        </motion.div>
       </Flex>
     </Box>
   );

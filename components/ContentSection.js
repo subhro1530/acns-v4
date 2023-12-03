@@ -14,7 +14,7 @@ const ContentSection = () => {
       ref={ref}
       bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif') center/cover"
       color="white"
-      h="100vh"
+      h={{ base: "70vh", md: "100vh" }}
       display="flex"
       alignItems="flex-end"
       justifyContent="flex-start"

@@ -14,7 +14,7 @@ const ContentSection3 = () => {
       ref={ref}
       bg="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/originals/90/c2/f7/90c2f783397ff969a6d22cc0587f7354.gif') center/cover"
       color="white"
-      h="100vh"
+      h={{ base: "70vh", md: "100vh" }}
       display="flex"
       alignItems="flex-end"
       justifyContent="flex-start"
@@ -50,7 +50,8 @@ const ContentSection3 = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Text fontSize="xl" fontWeight={200} color="cyan" mb={4}>
-            Don&apos;t worry! We offer you with all the graphics of your company with our rich expertise.
+            Don&apos;t worry! We offer you with all the graphics of your company
+            with our rich expertise.
           </Text>
         </motion.div>
         <motion.div

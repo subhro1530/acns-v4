@@ -121,13 +121,12 @@ const WorkSection = () => {
       p={2}
       mt={4}
       mx="auto"
-      maxW="85vw"
-      borderRadius="md"
+      maxW={{ base: "95vw", md: "85vw" }}
       id="WorkSection"
       initial={{ opacity: 0 }}
       animate={controls}
     >
-      <Box borderBottom="1px solid black" width="85vw" margin={4}>
+      <Box borderBottom="1px solid black" width="85vw" margin={2}>
         <Box
           as="h1"
           mt={20}
@@ -238,7 +237,7 @@ const WorkSection = () => {
           imageLink="https://crypto-expressio.web.app/"
         />
       </Flex>
-      <Box align="center" fontSize={25} color="black" mt={20} mb={20}>
+      <Box align="center" fontSize={16} color="black" mt={10} mb={10}>
         And many more...
       </Box>
     </Box>
