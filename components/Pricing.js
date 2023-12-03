@@ -41,7 +41,7 @@ const PricingSection = ({
       borderWidth="1px"
       borderRadius="md"
       width={{ base: "80%", md: "40%", lg: "23%" }}
-      height={{ base: "95vh", md: "50vh", lg: "85vh" }}
+      height={{ base: "95vh", md: "50vh", lg: "100vh" }}
       mx={{ base: "auto", md: 0 }}
       my={4}
       transition="ease-in-out 0.7s all"
@@ -50,7 +50,7 @@ const PricingSection = ({
       }}
     >
       <Divider borderColor={dividerColor} borderWidth={3} mb={4} />
-      <Text fontSize="2xl" fontWeight="700" mb={7}>
+      <Text fontSize="2xl" fontWeight="700" mb={7} height={10}>
         {name}
       </Text>
       <Text fontSize="4xl" fontWeight="bolder" mb={2} height="100px">
