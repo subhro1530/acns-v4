@@ -69,7 +69,7 @@ const NavbarMob = () => {
   };
 
   return (
-    <Box position="fixed" display={{ base: "block", md: "none" }}>
+    <Box position="fixed" width="100vw" display={{ base: "block", md: "none" }}>
       <Flex
         direction="row"
         align="center"
@@ -87,7 +87,7 @@ const NavbarMob = () => {
             bgColor="transparent"
             _hover={{ color: "gray.600", bgColor: "white" }}
           />
-          <ChakraLink href="/">
+          <ChakraLink ml={3} href="/">
             <Image
               src="/full.png"
               alt="ACNS"
