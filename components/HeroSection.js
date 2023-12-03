@@ -25,7 +25,7 @@ const HeroSection = () => {
         w="100%"
         maxW={{ md: "1200px" }}
         mx="auto"
-        pl={{ base: 4, md: 4 }}
+        pl={{ base: 0, md: 4 }}
       >
         <Box
           width="80%"
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <Heading
             as="h1"
             fontFamily="Work Sans, sans-serif"
-            fontSize={{ base: "6xl", md: "8xl" }}
+            fontSize={{ base: "40px", md: "8xl" }}
             fontWeight="300"
             wordwrap="break-word"
           >
@@ -44,7 +44,7 @@ const HeroSection = () => {
           <Heading
             as="h1"
             fontFamily="Work Sans, sans-serif"
-            fontSize={{ base: "6xl", md: "8xl" }}
+            fontSize={{ base: "40px", md: "8xl" }}
             fontWeight="300"
             color="gray"
             wordwrap="break-word"
@@ -54,7 +54,7 @@ const HeroSection = () => {
           <Heading
             as="h1"
             fontFamily="Work Sans, sans-serif"
-            fontSize={{ base: "6xl", md: "8xl" }}
+            fontSize={{ base: "40px", md: "8xl" }}
             fontWeight="300"
             color="cyan"
             wordwrap="break-word"
