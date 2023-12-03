@@ -19,15 +19,18 @@ import {
   FaLinkedin,
   FaGoogle,
   FaYoutube,
+  FaWhatsapp,
+  FaArrowRight,
+} from "react-icons/fa";
+import {
   Drawer,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  FaWhatsapp,
-  FaArrowRight,
-} from "react-icons/fa";
+} from "@chakra-ui/react";
+
 import Image from "next/image";
 
 const NavbarMob = () => {
@@ -75,14 +78,23 @@ const NavbarMob = () => {
         color="white"
         p={4}
       >
-        <HStack spacing={4} align="center">
+        <HStack spacing={20} align="center">
           <IconButton
             icon={<FaBars />}
             onClick={handleToggle}
             aria-label="Menu"
+            color="white"
+            bgColor="transparent"
+            _hover={{ color: "gray.600", bgColor: "white" }}
           />
           <ChakraLink href="/">
-            <Image src="/icon.png" alt="ACNS" height={30} width={30} priority />
+            <Image
+              src="/full.png"
+              alt="ACNS"
+              height={50}
+              width={100}
+              priority
+            />
           </ChakraLink>
         </HStack>
       </Flex>
@@ -125,11 +137,15 @@ const NavbarMob = () => {
                 transition=".4s ease-in-out"
                 _hover={{ color: "cyan" }}
                 target="_blank"
+                display="flex"
+                alignItems="center" // Align icon and text vertically
               >
-                {link.icon} {link.text}
+                {link.icon} {/* Icon */}
+                <span style={{ marginLeft: "8px" }}>{link.text}</span>{" "}
+                {/* Text */}
               </ChakraLink>
             ))}
-            <HStack spacing={4}>
+            <HStack spacing={4} mt={20} pl="60px" py={50} width="100%" bgColor="#111119">
               {socialMediaLinks.map((socialMediaLink, index) => (
                 <ChakraLink
                   key={index}
