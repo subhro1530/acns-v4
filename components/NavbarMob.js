@@ -69,7 +69,7 @@ const NavbarMob = () => {
   };
 
   return (
-    <Box display={{ base: "block", md: "none" }}>
+    <Box position="fixed" display={{ base: "block", md: "none" }}>
       <Flex
         direction="row"
         align="center"

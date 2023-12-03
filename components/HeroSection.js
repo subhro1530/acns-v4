@@ -11,7 +11,7 @@ const HeroSection = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      pt={{ base: "10vh", md: "50vh" }}
+      pt={{ base: "20vh", md: "50vh" }}
       pb="5vw"
     >
       <Flex
