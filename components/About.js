@@ -176,9 +176,9 @@ const About = () => {
           </Text>
           <Image
             src="/logo_all.png"
-            height={1500}
+            height={800}
             alt="all logos"
-            width={500}
+            width={300}
             priority
           ></Image>
         </VStack>
