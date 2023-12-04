@@ -39,13 +39,13 @@ const DownloadApp = () => {
       backgroundImage="url('https://media.istockphoto.com/id/1251629816/photo/the-perfect-setting-to-complete-work.webp?b=1&s=170667a&w=0&k=20&c=e8mSv3z6PhT18EUmzgtdMCbQecYzhHoqu_ts8tFdN6c=')"
       backgroundSize="cover"
       backgroundPosition="center"
-      minHeight="100vh"
+      minHeight={{ md: "100vh" }}
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      // paddingTop={{ md: "4rem" }}
-      marginLeft={20}
+      marginLeft={{ md: "20" }}
+      height={{ base: "50vh" }}
     >
       <Box
         backgroundColor="rgba(0,255,255, 0.4)"
@@ -53,9 +53,15 @@ const DownloadApp = () => {
         borderRadius="md"
         textAlign="center"
         width={{ md: "100%" }}
+        height={{ base: "100%" }}
       >
         <Flex flexDirection="column" alignItems="center">
-          <Heading fontWeight={300} mb={5} fontSize="50px" color="white">
+          <Heading
+            fontWeight={{ base: "400", md: "400" }}
+            mb={5}
+            fontSize={{ base: "18px", md: "50px" }}
+            color="white"
+          >
             {isTypingDone ? (
               <Typist key="reset" onTypingDone={handleResetTyping}>
                 Introducing ACNS App for Android!
@@ -72,8 +78,8 @@ const DownloadApp = () => {
             boxSize="200px"
             objectFit="cover"
             borderRadius="md"
-            width="90%"
-            height="auto"
+            height={{ md: "auto" }}
+            width={{ base: "100%", md: "90%" }}
             mb="4"
           />
           <Button colorScheme="blue">

@@ -121,7 +121,7 @@ const WorkSection = () => {
       p={2}
       mt={4}
       mx="auto"
-      maxW={{ base: "95vw", md: "85vw" }}
+      maxw={{ base: "95vw", md: "85vw" }}
       id="WorkSection"
       initial={{ opacity: 0 }}
       animate={controls}

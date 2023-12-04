@@ -19,11 +19,11 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           {/* Initialize Stripe with your public key */}
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `var stripe = Stripe('pk_test_51OIoJjSAa9ETLewFo6OZP0TQ5kgvaJAWvxbZTFszyhc8dGkHV3wEmEpaReLul0Xycxxp9AbJ7Qh3oqu3T6o2Vznt00uIl69bRu');`,
             }}
-          />
+          /> */}
         </body>
       </Html>
     );
