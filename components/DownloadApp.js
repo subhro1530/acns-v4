@@ -1,21 +1,7 @@
 import { Box, Button, Heading, Image, Flex } from "@chakra-ui/react";
-import Typist from "react-typist";
 import { useState } from "react";
 
 const DownloadApp = () => {
-  const [isTypingDone, setIsTypingDone] = useState(false);
-
-  const handleTypingDone = () => {
-    setTimeout(() => {
-      setIsTypingDone(true);
-    }, 5000);
-  };
-
-  const handleResetTyping = () => {
-    setTimeout(() => {
-      setIsTypingDone(false);
-    }, 5000);
-  };
   return (
     <Box
       backgroundImage="url('https://media.istockphoto.com/id/1251629816/photo/the-perfect-setting-to-complete-work.webp?b=1&s=170667a&w=0&k=20&c=e8mSv3z6PhT18EUmzgtdMCbQecYzhHoqu_ts8tFdN6c=')"
@@ -26,7 +12,7 @@ const DownloadApp = () => {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      marginLeft={{ md: "20" }}
+      marginLeft={{ md: "10" }}
     >
       <Box
         backgroundColor="rgba(0,255,255, 0.4)"
@@ -43,15 +29,7 @@ const DownloadApp = () => {
             fontSize={{ base: "25px", md: "50px" }}
             color="white"
           >
-            {isTypingDone ? (
-              <Typist key="reset" onTypingDone={handleResetTyping}>
-                Introducing ACNS App for Android!
-              </Typist>
-            ) : (
-              <Typist key="typing" onTypingDone={handleTypingDone}>
-                Introducing ACNS App for Android!
-              </Typist>
-            )}
+            Introducing ACNS App for Android!
           </Heading>
           <Image
             src="/acns-mobile.png"
