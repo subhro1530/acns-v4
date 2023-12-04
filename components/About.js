@@ -91,15 +91,7 @@ const About = () => {
   const textColor = useColorModeValue("gray.500", "gray.200");
 
   return (
-    <Box
-      pl="10vw"
-      bg="#111119"
-      color="white"
-      pt={4}
-      pb={4}
-      pr={4}
-      id="About"
-    >
+    <Box pl="10vw" bg="#111119" color="white" pt={4} pb={4} pr={4} id="About">
       <Heading
         as="h1"
         mt={20}
@@ -187,6 +179,7 @@ const About = () => {
             height={1500}
             alt="all logos"
             width={500}
+            priority
           ></Image>
         </VStack>
       </Box>

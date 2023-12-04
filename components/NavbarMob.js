@@ -69,7 +69,12 @@ const NavbarMob = () => {
   };
 
   return (
-    <Box position="fixed" width="100vw" zIndex={100} display={{ base: "block", md: "none" }}>
+    <Box
+      position="fixed"
+      width="100vw"
+      zIndex={100}
+      display={{ base: "block", md: "none" }}
+    >
       <Flex
         direction="row"
         align="center"
@@ -145,7 +150,14 @@ const NavbarMob = () => {
                 {/* Text */}
               </ChakraLink>
             ))}
-            <HStack spacing={4} mt={20} pl="60px" py={50} width="100%" bgColor="#111119">
+            <HStack
+              spacing={4}
+              mt={20}
+              pl="60px"
+              py={50}
+              width="100%"
+              bgColor="#111119"
+            >
               {socialMediaLinks.map((socialMediaLink, index) => (
                 <ChakraLink
                   key={index}

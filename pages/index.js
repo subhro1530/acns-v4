@@ -29,6 +29,9 @@ const QRPay = dynamic(() => import("@/components/QRPay"), { ssr: false });
 const NavbarMob = dynamic(() => import("@/components/NavbarMob"), {
   ssr: false,
 });
+const DownloadApp = dynamic(() => import("@/components/DownloadApp"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
@@ -49,6 +52,7 @@ const Home = () => {
           <Services />
           <Pricing />
           <QRPay />
+          <DownloadApp />
           <FAQ />
           <Contact />
         </div>
