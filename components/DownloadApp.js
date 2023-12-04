@@ -4,24 +4,6 @@ import { useState } from "react";
 
 const DownloadApp = () => {
   const [isTypingDone, setIsTypingDone] = useState(false);
-  // const handleDownload = () => {
-  //   const apkFileName = "pangea_news.apk";
-  //   const apkFilePath = `/${apkFileName}`;
-
-  //   // Create a link element
-  //   const downloadLink = document.createElement("a");
-  //   downloadLink.href = apkFilePath;
-  //   downloadLink.download = apkFileName;
-
-  //   // Append the link to the document
-  //   document.body.appendChild(downloadLink);
-
-  //   // Trigger the click event to start the download
-  //   downloadLink.click();
-
-  //   // Remove the link from the document
-  //   document.body.removeChild(downloadLink);
-  // };
 
   const handleTypingDone = () => {
     setTimeout(() => {
@@ -45,7 +27,6 @@ const DownloadApp = () => {
       alignItems="center"
       justifyContent="center"
       marginLeft={{ md: "20" }}
-      height={{ base: "50vh" }}
     >
       <Box
         backgroundColor="rgba(0,255,255, 0.4)"
@@ -59,7 +40,7 @@ const DownloadApp = () => {
           <Heading
             fontWeight={{ base: "400", md: "400" }}
             mb={5}
-            fontSize={{ base: "18px", md: "50px" }}
+            fontSize={{ base: "25px", md: "50px" }}
             color="white"
           >
             {isTypingDone ? (
@@ -78,6 +59,7 @@ const DownloadApp = () => {
             boxSize="200px"
             objectFit="cover"
             borderRadius="md"
+            mt={10}
             height={{ md: "auto" }}
             width={{ base: "100%", md: "90%" }}
             mb="4"

@@ -98,13 +98,13 @@ const Contact = () => {
       <Heading
         as="h1"
         mt={20}
-        fontSize="2xl"
+        fontSize={{ base: "1xl" , md:"1xl"}}
         mb={4}
         color="gray.200"
         fontWeight={200}
         letterSpacing={1}
       >
-        <Box mb={105} fontSize={80} color="cyan">
+        <Box mb={105} fontSize={60} color="cyan">
           Ready to get Started?
         </Box>
       </Heading>
