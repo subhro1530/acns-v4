@@ -22,7 +22,7 @@ const HeroSection = () => {
         align="center"
         justify="space-between"
         w="100%"
-        maxw={{ md: "1200px" }}
+        maxW={{ md: "1200px" }}
         mx="auto"
         pl={{ base: 0, md: 4 }}
       >
@@ -31,7 +31,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           width="80%"
-          maxw={{ base: "100%", md: "50%" }}
+          maxW={{ base: "100%", md: "50%" }}
           mb={{ base: 6, md: 0 }}
         >
           <Heading
@@ -71,7 +71,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          maxw={{ base: "80%", md: "40%" }}
+          maxW={{ base: "80%", md: "40%" }}
         >
           <ChakraImage
             src="https://advanceonline.com.au/wp-content/uploads/2019/10/website-designer-sydney-1024x1024.png"

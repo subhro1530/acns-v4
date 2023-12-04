@@ -28,7 +28,7 @@ const ContentSection3 = () => {
         direction="column"
         align="flex-start"
         mb={{ base: 8, md: 16 }}
-        maxw={{ md: "600px", lg: "800px" }}
+        maxW={{ md: "600px", lg: "800px" }}
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}

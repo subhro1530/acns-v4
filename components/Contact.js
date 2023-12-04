@@ -78,7 +78,7 @@ const Contact = () => {
       mx="auto"
       zIndex={-5}
       pl={{ base: "20px", md: "150px" }}
-      maxw="100vw"
+      maxW="100vw"
       borderRadius="md"
       id="Contact"
     >

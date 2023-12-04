@@ -121,7 +121,7 @@ const WorkSection = () => {
       p={2}
       mt={4}
       mx="auto"
-      maxw={{ base: "95vw", md: "85vw" }}
+      maxW={{ base: "95vw", md: "85vw" }}
       id="WorkSection"
       initial={{ opacity: 0 }}
       animate={controls}
@@ -188,6 +188,7 @@ const WorkSection = () => {
         p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
         width={{ base: "80vw", md: "90vw" }}
+        marginLeft={{ base: "5" }}
       >
         <WorkMember
           name="FEMWELLCARE"
@@ -207,6 +208,7 @@ const WorkSection = () => {
         p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
         width={{ base: "80vw", md: "90vw" }}
+        marginLeft={{ base: "5" }}
       >
         <WorkMember
           name="NOVA SPARKLE"
@@ -225,6 +227,7 @@ const WorkSection = () => {
         p={{ base: "0", md: "8" }}
         flexWrap={{ base: "wrap", md: "unset" }}
         width={{ base: "80vw", md: "90vw" }}
+        marginLeft={{ base: "5" }}
       >
         <WorkMember
           name="BAL ADHIKAR FUNQUEST"
