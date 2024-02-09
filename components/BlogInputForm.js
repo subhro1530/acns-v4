@@ -18,94 +18,143 @@ import {
 const BlogInputForm = ({ onSubmit }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [token, setToken] = useState("");
-  const [isTokenValid, setIsTokenValid] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
   const handleSubmit = () => {
-    if (isTokenValid) {
-      onSubmit({ title, content });
-      setTitle("");
-      setContent("");
-      onClose();
-    } else {
+    if (!title || !content) {
       toast({
-        title: "Invalid Token",
-        description: "Please enter a valid token to submit a blog.",
+        title: "Missing Fields",
+        description: "Please fill in both the title and content fields.",
         status: "error",
         duration: 3000,
         isClosable: true,
       });
+      return;
     }
-  };
 
-  const handleTokenVerification = () => {
-    if (token === "iwannapost") {
-      setIsTokenValid(true);
-      onClose();
-    } else {
-      toast({
-        title: "Invalid Token",
-        description: "Please enter a valid token to submit a blog.",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-    }
+    onSubmit({ title, content });
+    setTitle("");
+    setContent("");
+    onClose();
+    toast({
+      title: "Blog Submitted",
+      description: "Your blog has been successfully submitted.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
   };
 
   return (
-    <Box mt="40px">
+    <Box>
       <Button
         colorScheme="green"
         onClick={onOpen}
         fontFamily="Work Sans, sans-serif"
+        alignSelf="center"
+        mb={4}
+        bg="green.500"
+        _hover={{ bg: "green.600" }}
+        borderRadius="50px"
+        py={10}
+        cursor="pointer"
+        px={20}
       >
         Create Blog
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Enter Token</ModalHeader>
-          <ModalCloseButton />
+        <ModalContent
+          mx={20}
+          my={20}
+          bg="rgba(0, 0, 0, 0.9)"
+          borderRadius="10px"
+          p={30}
+        >
+          <ModalHeader
+            textAlign="center"
+            color="white"
+            fontSize="30px"
+            fontFamily="Work Sans, sans-serif"
+            mt={20}
+            mb={10}
+          >
+            Create Blog
+          </ModalHeader>
           <ModalBody>
-            <Input
-              placeholder="Token"
-              mb="10px"
-              value={token}
-              onChange={(e) => setToken(e.target.value)}
-              fontFamily="Work Sans, sans-serif"
-            />
+            <Box display="flex" flexDirection="column" alignItems="center">
+              <Input
+                placeholder="Title"
+                mb="10px"
+                mt={20}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                fontFamily="Work Sans, sans-serif"
+                width="100%"
+                bg="transparent"
+                color="white"
+                border="1px solid lightgray"
+                borderRadius="5px"
+                px={10}
+                py={10}
+                outline="none"
+                fontSize="18px"
+                _placeholder={{ color: "lightgray" }}
+              />
+              <Textarea
+                placeholder="Blog content"
+                mb="10px"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                fontFamily="Work Sans, sans-serif"
+                width="100%"
+                resize="vertical"
+                minH="150px"
+                bg="transparent"
+                color="white"
+                borderRadius="10px"
+                px={10}
+                py={10}
+                outline="none"
+                fontSize="18px"
+                border="1px solid lightgray"
+                _placeholder={{ color: "lightgray" }}
+              />
+            </Box>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter justifyContent="center">
             <Button
               colorScheme="green"
               mr={3}
-              onClick={handleTokenVerification}
+              cursor="pointer"
+              onClick={handleSubmit}
+              bgColor="green.500"
+              _hover={{ bg: "green.600" }}
+              color="black"
+              fontSize="25px"
+              height="40px"
+              borderRadius="5px"
+              width="40px"
             >
-              Verify Token
+              ✓
             </Button>
-            <Button variant="ghost" onClick={onClose}>
-              Close
+            <Button
+              onClick={onClose}
+              bg="red.500"
+              cursor="pointer"
+              _hover={{ bg: "red.600" }}
+              color="black"
+              fontSize="25px"
+              height="40px"
+              borderRadius="5px"
+              width="40px"
+            >
+              ✕
             </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Textarea
-        placeholder="Blog content"
-        mb="10px"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        fontFamily="Work Sans, sans-serif"
-      />
-      <Button
-        colorScheme="green"
-        onClick={handleSubmit}
-        fontFamily="Work Sans, sans-serif"
-      >
-        Submit Blog
-      </Button>
     </Box>
   );
 };
