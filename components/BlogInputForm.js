@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import {
   Box,
   Input,
@@ -15,13 +16,14 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-const BlogInputForm = ({ onSubmit }) => {
+const BlogInputForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [adminKey, setAdminKey] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!title || !content) {
       toast({
         title: "Missing Fields",
@@ -33,17 +35,37 @@ const BlogInputForm = ({ onSubmit }) => {
       return;
     }
 
-    onSubmit({ title, content });
-    setTitle("");
-    setContent("");
-    onClose();
-    toast({
-      title: "Blog Submitted",
-      description: "Your blog has been successfully submitted.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+    // Encode the admin key
+    const encodedAdminKey = btoa(adminKey);
+
+    try {
+      // Send the encoded admin key along with the blog data
+      const response = await axios.post("/api/posts", {
+        title,
+        content,
+        adminKey: encodedAdminKey,
+      });
+      console.log("New post created:", response.data);
+      toast({
+        title: "Blog Submitted",
+        description: "Your blog has been successfully submitted.",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+      setTitle("");
+      setContent("");
+      onClose();
+    } catch (error) {
+      console.error("Error creating blog:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit the blog. Please try again later.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -119,6 +141,24 @@ const BlogInputForm = ({ onSubmit }) => {
                 outline="none"
                 fontSize="18px"
                 border="1px solid lightgray"
+                _placeholder={{ color: "lightgray" }}
+              />
+              {/* Admin key input field */}
+              <Input
+                placeholder="Admin Key"
+                mb="10px"
+                value={adminKey}
+                onChange={(e) => setAdminKey(e.target.value)}
+                fontFamily="Work Sans, sans-serif"
+                width="100%"
+                bg="transparent"
+                color="white"
+                border="1px solid lightgray"
+                borderRadius="5px"
+                px={10}
+                py={10}
+                outline="none"
+                fontSize="18px"
                 _placeholder={{ color: "lightgray" }}
               />
             </Box>

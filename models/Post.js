@@ -1,5 +1,3 @@
-// models/Post.js
-
 import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
@@ -17,6 +15,7 @@ const postSchema = new mongoose.Schema({
   },
 });
 
-const Post = mongoose.model("Post", postSchema);
+// Check if the model has already been defined
+const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
 
 export default Post;

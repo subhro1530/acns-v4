@@ -12,6 +12,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import BlogCard from "../components/BlogCard";
 import BlogInputForm from "../components/BlogInputForm";
 import Navbar from "@/components/Navbar";
+import NavbarMob from "@/components/NavbarMob";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([
@@ -37,6 +38,7 @@ const Blog = () => {
   return (
     <Box>
       <Navbar />
+      <NavbarMob />
       <Flex
         overflowX="hidden"
         direction="column"
