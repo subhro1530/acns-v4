@@ -1,5 +1,3 @@
-// components/Navbar.js
-
 import {
   Box,
   Flex,
@@ -28,6 +26,7 @@ import {
   FaYoutube,
   FaArrowRight,
   FaWhatsapp,
+  FaBlog,
 } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
@@ -42,8 +41,9 @@ const Navbar = () => {
     { text: "Works", icon: <FaBriefcase />, href: "#WorkSection" },
     { text: "Services", icon: <FaCogs />, href: "#Services" },
     { text: "Contact", icon: <FaEnvelope />, href: "#Contact" },
+    { text: "Blog", icon: <FaBlog />, href: "/blog" },
   ];
-  
+
   const socialMediaLinks = [
     {
       icon: <FaWhatsapp />,
