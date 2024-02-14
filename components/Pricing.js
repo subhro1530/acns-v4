@@ -101,7 +101,7 @@ const Pricing = () => {
     {
       dividerColor: "lightblue",
       name: "Basic Web Presence",
-      price: "₹3999",
+      price: "₹14,999",
       pricetag: "one-time",
       pricetype: "",
       includes: [
@@ -114,7 +114,7 @@ const Pricing = () => {
     {
       dividerColor: "cyan",
       name: "Standard Web Package",
-      price: "₹5999",
+      price: "₹21,999",
       pricetag: "one-time",
       pricetype: "",
       includes: [
@@ -128,7 +128,7 @@ const Pricing = () => {
     {
       dividerColor: "darkcyan",
       name: "Premium Web and Graphics",
-      price: "₹7999",
+      price: "₹34,999",
       pricetag: "one-time",
       pricetype: "",
       includes: [
@@ -143,7 +143,7 @@ const Pricing = () => {
     {
       dividerColor: "blue",
       name: "Enterprise Package",
-      price: "₹9999",
+      price: "₹42,999",
       pricetag: "one-time",
       pricetype: "",
       includes: [
