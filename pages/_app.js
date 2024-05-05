@@ -1,17 +1,34 @@
 // pages/_app.js
-// import { Elements } from "@stripe/react-stripe-js";
-// import { loadStripe } from "@stripe/stripe-js";
 
-// const stripePromise = loadStripe(
-//   "pk_test_51OIoJjSAa9ETLewFo6OZP0TQ5kgvaJAWvxbZTFszyhc8dGkHV3wEmEpaReLul0Xycxxp9AbJ7Qh3oqu3T6o2Vznt00uIl69bRu"
-// );
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
-  return (
-    // <Elements stripe={stripePromise}>
-    <Component {...pageProps} />
-    // </Elements>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://www.paypal.com/sdk/js?client-id=EIt-FS6oRnv6ueBDmQoF7WFhDrXQFyI6dR05L6hk3ApGeeeKsoL02SRZgoIAt8HWwbCsZqhTFy5oHjQy`;
+    script.async = true;
+
+    script.onload = () => {
+      console.log("PayPal SDK script loaded");
+      // Refresh current route after script is loaded
+      router.replace(router.asPath);
+    };
+
+    script.onerror = () => {
+      console.error("Failed to load PayPal SDK script");
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [router]);
+
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

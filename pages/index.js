@@ -1,5 +1,4 @@
 // pages/index.js
-
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
@@ -8,7 +7,13 @@ const Pricing = dynamic(() => import("@/components/Pricing"), { ssr: false });
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
   ssr: false,
 });
+const PayThroughPayPal = dynamic(() => import("@/components/PayThroughPayPal"), {
+  ssr: false,
+});
 const WorkSection = dynamic(() => import("@/components/WorkSection"), {
+  ssr: false,
+});
+const PayPal = dynamic(() => import("@/components/PayPalButton"), {
   ssr: false,
 });
 const ContentSection = dynamic(() => import("@/components/ContentSection"), {
@@ -51,6 +56,7 @@ const Home = () => {
           <WorkSection />
           <Services />
           <Pricing />
+          <PayThroughPayPal />
           <QRPay />
           <DownloadApp />
           <FAQ />

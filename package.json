@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@paypal/paypal-js": "^8.0.5",
+    "@paypal/react-paypal-js": "^8.3.0",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.2.0",
     "axios": "^1.6.7",
@@ -29,6 +31,7 @@
     "react-hover-video-player": "^10.0.1",
     "react-icons": "^4.12.0",
     "react-intersection-observer": "^9.5.3",
+    "react-paypal-js": "^0.0.1-security",
     "react-router-dom": "^6.20.0",
     "react-typewriter-hook": "^1.0.2",
     "stripe": "^14.7.0"
