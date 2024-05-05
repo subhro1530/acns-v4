@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import PayPalButton from "../components/PayPalButton";
+import Head from "next/head";
 
 const CheckoutPage = () => {
   const [amount, setAmount] = useState(""); // State for amount input
@@ -43,6 +44,9 @@ const CheckoutPage = () => {
 
   return (
     <ChakraProvider>
+      <Head>
+        <title>Checkout | ACNS </title>
+      </Head>
       <Box bg="#111119" color="white" minHeight="100vh">
         <Navbar />
         <Flex

@@ -5,14 +5,18 @@ import { loadScript } from "@paypal/paypal-js";
 import { ChakraBaseProvider } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 
+
 const PayPalButton = ({ amount }) => {
   const [sdkLoaded, setSdkLoaded] = useState(false);
 
+  const client_id =
+    "AZSXFk8heXGqEiI7J3ISk9Mp4mDoey0O4mj1Cks7xNHucVDsocRIak86BCCFABrR3LeLjPacdcnJApqJ";
   useEffect(() => {
     const initializePayPalScript = async () => {
       try {
         const paypalScript = await loadScript({
-          "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+          // "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+          "client-id": client_id,
         });
         setSdkLoaded(true);
       } catch (err) {
@@ -25,7 +29,8 @@ const PayPalButton = ({ amount }) => {
     return () => {
       // Clean up any PayPal SDK script
       const existingScript = document.querySelector(
-        `[src="https://www.paypal.com/sdk/js?client-id=${process.env.local.NEXT_PUBLIC_PAYPAL_CLIENT_ID}"]`
+        // `[src="https://www.paypal.com/sdk/js?client-id=${process.env.local.NEXT_PUBLIC_PAYPAL_CLIENT_ID}"]`
+        `[src="https://www.paypal.com/sdk/js?client-id=${client_id}"]`
       );
       if (existingScript) {
         existingScript.remove();
