@@ -25,7 +25,7 @@ const PayPalButton = ({ amount }) => {
     return () => {
       // Clean up any PayPal SDK script
       const existingScript = document.querySelector(
-        `[src="https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}"]`
+        `[src="https://www.paypal.com/sdk/js?client-id=${process.env.local.NEXT_PUBLIC_PAYPAL_CLIENT_ID}"]`
       );
       if (existingScript) {
         existingScript.remove();
