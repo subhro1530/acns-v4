@@ -4,12 +4,16 @@ import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Pricing = dynamic(() => import("@/components/Pricing"), { ssr: false });
+const TestimonialSlider = dynamic(() => import("@/components/TestimonialSlider"), { ssr: false });
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
   ssr: false,
 });
-const PayThroughPayPal = dynamic(() => import("@/components/PayThroughPayPal"), {
-  ssr: false,
-});
+const PayThroughPayPal = dynamic(
+  () => import("@/components/PayThroughPayPal"),
+  {
+    ssr: false,
+  }
+);
 const WorkSection = dynamic(() => import("@/components/WorkSection"), {
   ssr: false,
 });
@@ -58,6 +62,7 @@ const Home = () => {
           <Pricing />
           <PayThroughPayPal />
           <QRPay />
+          <TestimonialSlider />
           <DownloadApp />
           <FAQ />
           <Contact />
