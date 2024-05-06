@@ -11,6 +11,7 @@ const PayPalButton = ({ amount }) => {
 
   const client_id =
     "AZSXFk8heXGqEiI7J3ISk9Mp4mDoey0O4mj1Cks7xNHucVDsocRIak86BCCFABrR3LeLjPacdcnJApqJ";
+  
   useEffect(() => {
     const initializePayPalScript = async () => {
       try {
