@@ -4,7 +4,10 @@ import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Pricing = dynamic(() => import("@/components/Pricing"), { ssr: false });
-const TestimonialSlider = dynamic(() => import("@/components/TestimonialSlider"), { ssr: false });
+const TestimonialSlider = dynamic(
+  () => import("@/components/TestimonialSlider"),
+  { ssr: false }
+);
 const HeroSection = dynamic(() => import("@/components/HeroSection"), {
   ssr: false,
 });
@@ -41,12 +44,15 @@ const NavbarMob = dynamic(() => import("@/components/NavbarMob"), {
 const DownloadApp = dynamic(() => import("@/components/DownloadApp"), {
   ssr: false,
 });
+const ScheduleMeet = dynamic(() => import("@/components/ScheduleMeet"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
     <Box scrollbehaviour="smooth" overflowX="hidden">
       <Head>
-        <title>Home | ACNS </title>
+        <title>ACNS | Delivering Top Notch Services </title>
       </Head>
       <ChakraProvider>
         <div style={{ fontFamily: "Work Sans, sans-serif" }}>
@@ -65,6 +71,7 @@ const Home = () => {
           <TestimonialSlider />
           <DownloadApp />
           <FAQ />
+          <ScheduleMeet />
           <Contact />
         </div>
       </ChakraProvider>

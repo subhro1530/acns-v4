@@ -8,24 +8,24 @@ const testimonials = [
     name: "Mintu Jha",
     quote: "Developed our website with transparency and without any issues!",
     review:
-      "Shaswata worked with Mintu Jha on Marketing Labs and developed their website. The process was transparent and without any issues.",
+      "ACNS worked with Mintu Jha on Marketing Labs and developed their website. The process was transparent and without any issues.",
   },
   {
     name: "Msk",
     quote: "Satisfied client on Fiverr by creating a logo.",
     review:
-      "Shaswata created a logo for Msk on Fiverr and he was satisfied with the outcome.",
+      "ACNS created a logo for Msk on Fiverr and he was satisfied with the outcome.",
   },
   {
     name: "Jane Smith",
     quote: "Highly recommend! Great service and professionalism.",
     review:
-      "Shaswata's professionalism and service were outstanding. Highly recommended!",
+      "ACNS's professionalism and service were outstanding. Highly recommended!",
   },
   {
     name: "Mike Anderson",
     quote: "Exceeded expectations. Phenomenal work!",
-    review: "Shaswata exceeded all expectations with phenomenal work!",
+    review: "ACNS exceeded all expectations with phenomenal work!",
   },
 ];
 
@@ -95,7 +95,7 @@ const TestimonialSlider = () => {
               {testimonial.name}
             </Text>
             <Text fontSize="xl" fontStyle="italic" mb={6}>
-              "{testimonial.quote}"
+              {testimonial.quote}
             </Text>
             <Text fontSize="lg">{testimonial.review}</Text>
           </Box>

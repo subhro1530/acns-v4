@@ -60,7 +60,7 @@ const ContentSection3 = () => {
           transition={{ duration: 1, delay: 1 }}
         >
           <Link
-            href="#Contact"
+            href="#ScheduleMeet"
             style={{
               display: "flex",
               alignItems: "center",

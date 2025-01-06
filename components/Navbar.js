@@ -41,21 +41,21 @@ const Navbar = () => {
     { text: "Works", icon: <FaBriefcase />, href: "#WorkSection" },
     { text: "Services", icon: <FaCogs />, href: "#Services" },
     { text: "Contact", icon: <FaEnvelope />, href: "#Contact" },
-    { text: "Blog", icon: <FaBlog />, href: "/blog" },
+    // { text: "Blog", icon: <FaBlog />, href: "/blog" },
   ];
 
   const socialMediaLinks = [
     {
       icon: <FaWhatsapp />,
-      href: "https://wa.me/9674177512",
+      href: "https://wa.me/9433211591",
     },
     {
       icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/in/shaswata-saha-74b209251/",
+      href: "https://www.linkedin.com/company/91105676",
     },
     {
       icon: <FaGoogle />,
-      href: "mailto:shaswata.ssaha@gmail.com",
+      href: "mailto:acodernamedsubhro@gmail.com",
     },
     {
       icon: <FaYoutube />,

@@ -154,7 +154,7 @@ const Contact = () => {
             transition="0.2s ease-in-out"
             href="mailto:shaswata.ssaha@gmail.com"
           >
-            shaswata.ssaha@gmail.com
+            acodernamedsubhro@gmail.com
           </Link>
         </VStack>
         <VStack align="center" ml={{ base: "0", md: "80px" }}>
@@ -169,7 +169,7 @@ const Contact = () => {
           >
             <Box mb={2}>/CONTACT</Box>
           </Heading>
-          <Text>+91 9674-1775-12</Text>
+          <Text>+91 9433-2115-91</Text>
         </VStack>
         <VStack align="center" ml={{ base: "0", md: "80px" }}>
           <Heading
@@ -181,14 +181,14 @@ const Contact = () => {
             fontWeight={200}
             letterSpacing={1}
           >
-            <Box mb={2}>/LINKEDIN</Box>
+            <Box mb={2}>/TWITTER</Box>
           </Heading>
           <Link
             _hover={{ color: "cyan" }}
             transition="0.2s ease-in-out"
-            href="https://www.linkedin.com/in/shaswata-saha-74b209251/"
+            href="https://x.com/acnsofficial"
           >
-            shaswata-saha-74b209251
+            acnsofficial
           </Link>
         </VStack>
       </HStack>

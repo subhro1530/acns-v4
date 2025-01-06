@@ -74,11 +74,13 @@ const HeroSection = () => {
           maxW={{ base: "80%", md: "40%" }}
         >
           <ChakraImage
-            src="https://advanceonline.com.au/wp-content/uploads/2019/10/website-designer-sydney-1024x1024.png"
+            src="/OBJECTS.png"
             alt="Hero Image"
             borderRadius="md"
-            mt={{ base: "0px", md: "-400px" }}
-            w="90%"
+            mt={{ base: "50px", md: "-400px" }}
+            ml={{base:"80px"}}
+            align="center"
+            w={{ md: "100%" ,base:"60%"}}
             h="auto"
           />
         </motion.div>

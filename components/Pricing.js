@@ -157,6 +157,58 @@ const Pricing = () => {
         "Custom Coupon Card for Next Purchase",
       ],
     },
+    {
+      dividerColor: "pink",
+      name: "Basic Graphics Package",
+      price: "₹4,999",
+      pricetag: "one-time",
+      pricetype: "",
+      includes: [
+        "Logo Design",
+        "Business Card Design",
+        "Social Media Templates",
+        "Delivery in 7 days",
+      ],
+    },
+    {
+      dividerColor: "purple",
+      name: "Standard Graphics Package",
+      price: "₹9,999",
+      pricetag: "one-time",
+      pricetype: "",
+      includes: [
+        "Custom Logo Design",
+        "Business Card and Letterhead Design",
+        "Social Media Post Templates",
+        "Up to 5 Custom Illustrations",
+        "Delivery in 7 days",
+      ],
+    },
+    {
+      dividerColor: "orange",
+      name: "Basic Posters Package",
+      price: "₹2,999",
+      pricetag: "one-time",
+      pricetype: "",
+      includes: [
+        "Up to 5 Posters",
+        "Creative and Eye-Catching Designs",
+        "Delivery in 5 days",
+      ],
+    },
+    {
+      dividerColor: "red",
+      name: "Standard Posters Package",
+      price: "₹6,499",
+      pricetag: "one-time",
+      pricetype: "",
+      includes: [
+        "Up to 10 Posters",
+        "Custom and Highly Engaging Designs",
+        "Revisions Included",
+        "Delivery in 7 days",
+      ],
+    },
   ];
 
   return (

@@ -1,106 +1,170 @@
-// components/WorkSection.js
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   Box,
-  Divider,
   Heading,
   Text,
   Flex,
   Image,
+  Link as ChakraLink,
   Button,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import NextLink from "next/link";
-import Link from "next/link";
 
-const WorkMember = ({ name, imageUrl, imageLink }) => {
+const workItems = [
+  {
+    name: "UrbanMotion",
+    description:
+      "An innovative car rental platform offering streamlined booking and user-friendly navigation for modern travelers.",
+    imageUrl: "/urbanmotion.png",
+    imageLink: "https://urbanmotion.vercel.app/",
+  },
+  {
+    name: "Marketing Lab",
+    description:
+      "A professional freelance website designed for MarketingLab's dynamic team in Salt Lake, Kolkata, showcasing their services and portfolio.",
+    imageUrl: "/marketinglab.png",
+    imageLink: "https://www.marketinglab.in/",
+  },
+  {
+    name: "Lecole De Talents",
+    description:
+      "A vibrant website created for an educational academy that celebrates Afro dance and cultural learning opportunities.",
+    imageUrl: "/lecole.png",
+    imageLink: "https://lecoledetalents.vercel.app/",
+  },
+  {
+    name: "Shadow",
+    description:
+      "A powerful cyber analysis toolkit developed for digital forensics, enhancing cybersecurity capabilities.",
+    imageUrl: "/shadow.png",
+    imageLink: "https://shadow141.vercel.app/",
+  },
+  {
+    name: "VitalityAI",
+    description:
+      "A cutting-edge platform consolidating diverse medical facilities and services into one convenient location.",
+    imageUrl: "/vitality.png",
+    imageLink: "https://vitalityaiofficial.vercel.app/",
+  },
+  {
+    name: "Pangea News",
+    description:
+      "An engaging and responsive news website designed to provide global audiences with the latest updates and stories.",
+    imageUrl: "/pangeanews.png",
+    imageLink: "https://pangeanews.vercel.app/",
+  },
+  {
+    name: "Triaging Healthcare",
+    description:
+      "A healthcare web app offering efficient symptom triaging and patient management for medical professionals.",
+    imageUrl: "/triaging.png",
+    imageLink: "https://triaginghealthcare.vercel.app/",
+  },
+  {
+    name: "Femwellcare",
+    description:
+      "An empowering platform dedicated to promoting women's healthcare through innovative design and accessible features.",
+    imageUrl: "/femwellcare.png",
+    imageLink: "https://femwellcare.vercel.app/",
+  },
+  {
+    name: "Nova Sparkle",
+    description:
+      "A dynamic music platform combining stunning visuals with seamless user navigation for an engaging experience.",
+    imageUrl: "/novasparkle.png",
+    imageLink: "https://nova-sparkle-music.vercel.app/",
+  },
+  {
+    name: "0xArchitect",
+    description:
+      "A crypto analysis website equipped with advanced tools and metrics for blockchain and digital asset exploration.",
+    imageUrl: "/0xarchitect.png",
+    imageLink: "https://0xarchitect-test.vercel.app/",
+  },
+  {
+    name: "GymOn",
+    description:
+      "A sleek and responsive frontend project crafted for a modern gym website, combining design with functionality.",
+    imageUrl: "/gymon.png",
+    imageLink: "https://gymon-d184b.web.app/",
+  },
+  {
+    name: "ClimaGuard",
+    description:
+      "An intuitive climate monitoring website providing real-time updates and valuable environmental insights.",
+    imageUrl: "/climaguard.png",
+    imageLink: "https://climaguard.vercel.app/",
+  },
+  {
+    name: "Bal Adhikar Funquest",
+    description:
+      "An interactive educational platform created for children, blending learning and entertainment seamlessly.",
+    imageUrl: "/baladhikarfunquest.png",
+    imageLink: "https://bal-adhikar-funquest.vercel.app/",
+  },
+  {
+    name: "Crypto Expressio",
+    description:
+      "A comprehensive cryptocurrency platform delivering detailed market insights and analysis tools for enthusiasts.",
+    imageUrl: "/crypto-expressio.png",
+    imageLink: "https://crypto-expressio.web.app/",
+  },
+];
+
+
+const WorkCard = ({ name, description, imageUrl, imageLink }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
-      controls.start({ opacity: 1, x: 0 });
+      controls.start({ opacity: 1, y: 0 });
     }
   }, [controls, inView]);
 
   return (
-    <Box
+    <motion.div
       ref={ref}
-      position="relative"
-      width={{ base: "40rem", md: "100%" }}
-      height={{ base: "10rem", md: "17rem" }}
-      margin={{ base: "1rem", md: "2rem" }}
-      initial={{ opacity: 0, x: -50 }}
+      initial={{ opacity: 0, y: 50 }}
       animate={controls}
-      _hover={{
-        ".imgBox": {
-          transform: "translate(-3.5rem, -3.5rem)",
-        },
-        ".content": {
-          transform: "translate(3.5rem, 3.5rem)",
-        },
-      }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <Box
-        position="absolute"
-        top="0"
-        left="0"
-        width="100%"
-        height="100%"
-        zIndex="2"
-        transition="all 0.5s ease-in-out"
-        className="imgBox"
+        bg="white"
+        shadow="lg"
+        borderRadius="md"
+        overflow="hidden"
+        transition="transform 0.3s ease-in-out"
+        _hover={{ transform: "translateY(-10px)", shadow: "xl" }}
       >
         <Image
           src={imageUrl}
           alt={name}
-          width={{ base: "100%", md: "100%" }}
-          height={{ base: "10rem", md: "100%" }}
+          width="100%"
+          height="200px"
           objectFit="cover"
-          resize="both"
-          borderRadius="base"
         />
-      </Box>
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        width="100%"
-        height="100%"
-        padding="1.5rem"
-        display="flex"
-        justifyContent="center"
-        backgroundColor="cyan"
-        color="white"
-        flexDirection="column"
-        alignItems="flex-end"
-        textAlign="center"
-        transition="0.5s ease-in-out"
-        className="content"
-        borderRadius="md"
-      >
-        <Heading
-          position={{ base: "absolute" }}
-          bottom={{ base: "28px", md: "10px" }}
-          left={{ base: "20px", md: "5px" }}
-          as="h2"
-          fontSize={{ base: "20px", md: "40px" }}
-          pt={5}
-          color="#181824"
-          fontWeight="500"
-          lineHeight="2rem"
-          letterSpacing="1px"
-          cursor="pointer"
-          mt={40}
-          _hover={{ color: "white", textShadow: "3px 1px 2px black" }}
-        >
-          <Link href={imageLink} target="_blank">
+        <Box p={4}>
+          <Heading as="h3" size="md" mb={2}>
             {name}
-          </Link>
-        </Heading>
+          </Heading>
+          <Text fontSize="sm" color="gray.600" mb={4}>
+            {description}
+          </Text>
+          <Button
+            as={ChakraLink}
+            href={imageLink}
+            target="_blank"
+            colorScheme="teal"
+            size="sm"
+          >
+            View Project
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 
@@ -117,130 +181,44 @@ const WorkSection = () => {
   return (
     <Box
       ref={ref}
-      bg="white"
-      p={2}
-      mt={4}
+      bg="gray.50"
+      py={10}
+      px={4}
       mx="auto"
-      maxW={{ base: "95vw", md: "85vw" }}
+      maxW="1200px"
       id="WorkSection"
-      initial={{ opacity: 0 }}
-      animate={controls}
     >
-      <Box borderBottom="1px solid black" width="85vw" margin={2}>
-        <Box
+      {/* Section Header */}
+      <Box textAlign="center" mb={8}>
+        <Heading
           as="h1"
-          mt={20}
-          fontSize="1xl"
-          mb={4}
-          color="black.200"
-          fontWeight={200}
-          letterSpacing={1}
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontWeight="bold"
+          color="teal.500"
         >
-          /WORK
-        </Box>
+          My Projects
+        </Heading>
+        <Text color="gray.600" fontSize="md" mt={2}>
+          Explore some of the projects I&apos;ve worked on, showcasing
+          creativity and technical expertise.
+        </Text>
       </Box>
 
-      {/* Section 2: Content */}
-      <Flex direction={{ base: "column", md: "row" }} mb={8}>
-        {/* Left side */}
-        <Box flex="1">
-          <Heading
-            as="h3"
-            fontFamily="Work Sans, sans-serif"
-            fontSize={{ base: "6xl", md: "8xl" }}
-            fontWeight="300"
-            mb={4}
-          >
-            Design Is Emotion
-          </Heading>
-        </Box>
+      {/* Work Grid */}
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
+        {workItems.map((item, index) => (
+          <WorkCard
+            key={index}
+            name={item.name}
+            description={item.description}
+            imageUrl={item.imageUrl}
+            imageLink={item.imageLink}
+          />
+        ))}
+      </SimpleGrid>
 
-        {/* Right side */}
-        <Box
-          flex="1"
-          opacity="0.8"
-          fontSize="0.95rem"
-          letterSpacing="wide"
-          lineHeight="1.8rem"
-          wordSpacing="10px"
-        >
-          <Text>
-            We believe fervently in the transformative power of emotion within
-            design, I approach each project as a canvas for infusing unique
-            values and aspirations, curiosity, and trust through the nuanced
-            interplay of captivating visuals.
-          </Text>
-          <Text marginTop="1rem">
-            In this strategic approach, I view the design process as a vehicle
-            for cultivating authentic brand experiences. The goal is not just to
-            craft visually appealing elements but to empower websites and
-            graphics with the ability to resonate deeply. From the careful
-            selection of colors to the deliberate choice of typography and
-            imagery, each component acts as a purposeful emotive tool.
-          </Text>
-        </Box>
-      </Flex>
-
-      {/* Work Members */}
-      <Flex
-        justify="center"
-        align="center"
-        p={{ base: "0", md: "8" }}
-        flexWrap={{ base: "wrap", md: "unset" }}
-        width={{ base: "80vw", md: "90vw" }}
-        marginLeft={{ base: "5" }}
-      >
-        <WorkMember
-          name="FEMWELLCARE"
-          imageUrl="/femwellcare.png"
-          imageLink="https://femwellcare.vercel.app/"
-        />
-
-        <WorkMember
-          name="PANGEA NEWS"
-          imageUrl="/pangeanews.png"
-          imageLink="https://pangeanews.vercel.app/"
-        />
-      </Flex>
-      <Flex
-        justify="center"
-        align="center"
-        p={{ base: "0", md: "8" }}
-        flexWrap={{ base: "wrap", md: "unset" }}
-        width={{ base: "80vw", md: "90vw" }}
-        marginLeft={{ base: "5" }}
-      >
-        <WorkMember
-          name="NOVA SPARKLE"
-          imageUrl="/novasparkle.png"
-          imageLink="https://nova-sparkle-music.vercel.app/"
-        />
-        <WorkMember
-          name="CLIMAGUARD"
-          imageUrl="/climaguard.png"
-          imageLink="https://climaguard.vercel.app/"
-        />
-      </Flex>
-      <Flex
-        justify="center"
-        align="center"
-        p={{ base: "0", md: "8" }}
-        flexWrap={{ base: "wrap", md: "unset" }}
-        width={{ base: "80vw", md: "90vw" }}
-        marginLeft={{ base: "5" }}
-      >
-        <WorkMember
-          name="BAL ADHIKAR FUNQUEST"
-          imageUrl="/baladhikarfunquest.png"
-          imageLink="https://bal-adhikar-funquest.vercel.app/"
-        />
-        <WorkMember
-          name="CRYPTO EXPRESSIO"
-          imageUrl="/crypto-expressio.png"
-          imageLink="https://crypto-expressio.web.app/"
-        />
-      </Flex>
-      <Box align="center" fontSize={16} color="black" mt={10} mb={10}>
+      {/* Footer */}
+      <Box textAlign="center" fontSize="lg" color="gray.600" mt={10}>
         And many more...
       </Box>
     </Box>
